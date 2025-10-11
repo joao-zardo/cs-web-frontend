@@ -1,0 +1,249 @@
+/* --- Reset Básico e Estilos Globais --- */
+* { /* O asterisco é o "seletor universal", seleciona todos os elementos da página */
+    margin: 0;
+    padding: 0; /* Remove margens e espaçamentos padrão criados pelos navegadores */
+    box-sizing: border-box; /* Muda como o navegador calcula o tamanho total de um elemento. Com ela, a largura e a altura que eu definir para uma caixa já incluem o preenchimento (padding) e a borda (border) */
+}
+
+body { /* Estilos aplicados ao corpo da página "body" */
+    font-family: 'Inter', sans-serif; /* Define a fonte principal do site, se não conseguir a fonte Inter, vai usar uma fonte genérica */
+    background-color: #f7fafc; /* cor padrão do fundo */
+    color: #2d3748; /* cor padrão do texto */
+    line-height: 1.6; /* espaçamento entre as linhas de um parágrafo */
+}
+
+.container { /* Classe utilitária para centralizar o conteúdo e limitar a largura máxima */
+    max-width: 1200px; /* Largura máxima do conteúdo para não esticar muito em telas grandes */
+    margin-left: auto; /* Centraliza horizontalmente, juntamente com a linha de código abaixo */
+    margin-right: auto;
+    padding-left: 1.5rem; /* Espaçamento interno nas laterais, garante que o conteúdo nunca cole nas bordas da tela */
+    padding-right: 1.5rem; /*Padding é o espaço que fica entre o conteúdo e a borda dessa caixa*/
+}
+
+img { /* Garante que as imagens sejam responsivas, ou seja se adaptam ao tamanho da tela*/
+    max-width: 100%; /* A imagem nunca vai ultrapassar a largura do seu contêiner pai */
+    height: auto; /* Mantém a proporção original da imagem */
+    display: block; /* Remove espaçamentos indesejados abaixo das imagens */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+a {
+    color: inherit; /* Herda a cor do elemento pai */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+}
+
+/* --- Cabeçalho e Navegação --- */
+.main-header { /*Estiliza a barra do cabeçalho principal*/
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidade */
+    position: sticky; /* Faz o cabeçalho "grudar" no topo da página ao rolar para baixo */
+    top: 0; /* Define a posição do topo quando o cabeçalho está sticky */
+    z-index: 50; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+.main-nav {
+    display: flex; /*Organiza os itens (logo e links) em uma linha horizontal*/
+    align-items: center; /* Alinha verticalmente os itens ao centro */
+    padding-top: 1rem; /* Adiciona um espaçamento interno vertical para que os itens não fiquem colados nas bordas superior e inferior*/
+    padding-bottom: 1rem;
+}
+
+.logo img {
+    height: 100px; /* Define a altura da imagem do logo */
+    width: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaçamentos indesejados */
+}
+
+.nav-link {
+    color: #4a5568; /* cinza médio */
+    transition: color 0.3s ease; /* Transição suave para a mudança de cor ao passar o mouse */
+    border-bottom: 2px solid transparent; /* Borda transparente para manter alinhamento. Sem isso aqui o link da página ativa fica fora do esquadro */
+    padding-bottom: 4px; /* Padding aplicado a todos os links */
+}
+
+.nav-link.active { /* Estilo para o link ativo (página atual) */
+    font-weight: 600; /* Deixa o texto mais negrito */
+    border-bottom: 2px solid #FBBF24; /* Adiciona a linha amarela embaixo do texto, indicando que aquela é a página atual */
+    padding-bottom: 4px; /* Cria um pequeno espaço entre o texto e a linha amarela */
+}
+
+.nav-link:hover { /* O hover é uma pseudo-classe que aplica estilos quando o usuário passa o mouse sobre o elemento, isso indica que o link é clicável */
+    color: #1E3A8A; /* a cor do texto muda para azul quando o mouse passa sobre o elemento */
+}
+
+.cta-button { /* Call to Action - Botão de Chamada para Ação */
+    background-color: #1E3A8A; /* Fundo azul */
+    color: #ffffff; /* Texto branco */
+    font-weight: 700; /* Texto em negrito */
+    padding: 0.5rem 1rem; /* Espaçamento interno para não ficar "apertado" */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave para a mudança de cor ao passar o mouse */
+}
+
+.cta-button:hover {
+    background-color: #1C357A; /* Azul mais escuro quando o mouse passa por cima do botão*/
+}
+
+/* --- Alinhamento e espaçamento dos itens da navegação --- */
+
+.main-nav > .logo { /* O símbolo > garante que o estilo seja aplicado somente ao elemento .logo que está no primeiro nível hierárquico dentro de .main-nav */
+    margin-right: auto; /* O "auto" faz com que o navegador use todo o espaço disponível para empurrar os outros itens para a direita */
+}
+
+.main-nav > .nav-link, /* O símbolo > garante que o estilo seja aplicado somente aos elementos .nav-link que estão no primeiro nível hierárquico dentro de .main-nav */
+.main-nav > .cta-button { /* Seleciona o botão de chamada para ação dentro do .main-nav */
+    margin-left: 1.5rem; /* Adiciona um espaçamento à esquerda de cada link e do botão */
+}
+
+/* --- Conteúdo Principal --- */
+main { /* Estilos aplicados ao elemento principal "main" */
+    padding-top: 3rem; /* Espaçamento interno no topo e na base para que o conteúdo não fique colado no cabeçalho e no rodapé */
+    padding-bottom: 3rem;
+}
+
+section { 
+    margin-bottom: 4rem; /* Espaçamento entre as seções para não ficarem coladas */
+}
+
+.welcome-section { /*Centraliza todo o texto e os elementos dentro da seção de boas-vindas*/
+    text-align: center;
+}
+
+.welcome-section h1 { /*estiliza o título <h1> que está dentro da seção de boas-vindas*/
+    font-size: 2.5rem; /*Aumenta o tamanho da fonte*/
+    font-weight: 700;
+    color: #1a202c; /* cor preta/cinza muito escuro */
+    margin-bottom: 1rem; /* pequeno espaço abaixo do título, separando-o do parágrafo*/
+}
+
+.welcome-section p { /*Estiliza o parágrafo <p> dentro da seção de boas-vindas*/
+    font-size: 1.125rem;
+    color: #4a5568;
+    max-width: 48rem; /* Limita a largura máxima do parágrafo para melhorar a legibilidade em telas grandes */
+    margin: 0.5rem auto 2rem auto; /*Define a margem superior (0.5rem), a margem da direita (auto), a margem inferior (2rem) e a margem da esquerda (auto). Como esquerda e direita é auto, vai centralizar*/
+}
+
+.main-image {
+    border-radius: 0.5rem; /*Arredonda os cantos da imagem*/
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /*Adiciona uma sombra sutil para dar profundidade*/
+}
+
+/* Seção Sobre, Valores e Contato */
+.section-title { /* Classe reutilizável para os títulos das seções */
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1a202c;
+    margin-bottom: 2rem;
+}
+
+.about-section { /* Seção Sobre Nós (Nossa história). Cria um cartão branco com espaçamento interno, cantos arredondados e sombra sutil */
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.about-section .grid { /*ativa o layout de colunas para organizar o texto e a imagem.*/
+    display: grid;
+    gap: 2rem; /*define o espaço entre as colunas*/
+    align-items: center;
+}
+
+.about-section p { /*aplica-se a todos os elementos <p> (parágrafos) que estão dentro de um elemento com a classe .about-section.*/
+    margin-bottom: 1rem; /*Adiciona um espaço de 1rem abaixo de cada parágrafo.*/
+    color: #4a5568; /* Define a cor do texto dos parágrafos como cinza médio */
+}
+
+.about-section img { /*Esta regra aplica-se a todos os elementos <img> (imagens) que estão dentro da seção .about-section*/
+    border-radius: 0.5rem; /*Arredonda os cantos da imagem*/
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /*Adiciona uma sombra sutil para dar profundidade*/
+}
+
+.values-section .grid { /*Ativa o layout de grade para os cards de valores*/
+    display: grid;
+    gap: 2rem;
+}
+
+.card { /* Estilo para os cartões de valores */
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /*cria a animação suave para o efeito :hover*/
+}
+
+.card:hover { /*Efeito ao passar o mouse sobre o card, faz o card subir um pouco e a sombra aumenta. Da um efeito de mais "destacado" e fica bonito*/
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 { /*Estiliza o título dentro de cada card, definindo o tamanho, a cor azul e o espaçamento*/
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1E3A8A; /* Azul */
+    margin-bottom: 0.5rem;
+}
+
+.contact-section { /*Regra geral para a seção: Cria a seção com fundo amarelo principal e texto branco*/
+    background-color: #FBBF24; /* Amarelo */
+    color: #ffffff; /* Texto dos cartões branco. O título continua preto pois há uma regra específica para ele em .section-title */
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.contact-section .grid { /*cria o layout de colunas para as caixas de contato*/
+    display: grid;
+    gap: 2rem; 
+    max-width: 48rem; /* Limita a largura máxima da seção de contato para melhorar a legibilidade em telas grandes */
+    margin: auto; /* Centraliza a seção de contato horizontalmente */
+}
+
+.contact-box { /*Estiliza as caixas individuais de "E-mail" e "Telefone".*/
+    background-color: #1E3A8A; /* Azul mais escuro */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.contact-box h3 { /*Estiliza o título dentro de cada caixa de contato*/
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-box a:hover { /*Centraliza o texto e adiciona um efeito de sublinhado (underline) quando o usuário passa o mouse sobre o link de contato*/
+    text-decoration: underline;
+}
+
+
+/* --- Rodapé --- */
+.main-footer { /*Aplica estilos ao elemento que tem a classe main-footer*/
+    background-color: #2d3748; /*Define a cor de fundo do rodapé para um cinza escuro*/
+    color: #ffffff; /*Define a cor padrão do texto dentro do rodapé como branco.*/
+    padding: 1rem;
+    text-align: center;
+}
+
+.main-footer .credits { /*É um seletor mais específico que se aplica a um elemento com a classe credits que está dentro do .main-footer*/
+    font-size: 0.875rem; /*Texto um pouco menor que o texto principal*/
+    color: #a0aec0; /* cinza claro */
+    margin-top: 0.25rem; /*Adiciona um pequeno espaço acima da linha dos créditos, separando-a do texto de copyright.*/
+}
+
+/* --- Responsividade (Telas Maiores), sem ele o código em um desktop vai ficar parecendo mobile --- */
+/* O código está escrito com uma abordagem mobile-first, por isso é necessário adicionar media queries para telas maiores */
+@media (min-width: 768px) { /*@media significa que as regras dentro dela só serão aplicadas se a condição for verdadeira. Nesse caso, a condição é que a largura mínima da tela seja de 768 pixels. Ou seja, as regras dentro desse bloco só vão valer para telas de tablets e desktops, não para celulares*/
+    .welcome-section h1 { 
+        font-size: 3rem; /*Aumenta o tamanho da fonte do título 1 para 3rem, para que ele tenha mais impacto em telas maiores.*/
+    }
+    .about-section .grid {
+        grid-template-columns: repeat(2, 1fr); /*Muda o layout da seção sobre para uma grade de 2 colunas (repeat(2, 1fr)), colocando o texto e a imagem lado a lado.*/
+    }
+    .values-section .grid {
+        grid-template-columns: repeat(3, 1fr); /*Muda o layout para uma grade de 3 colunas, colocando os três cards de valores lado a lado.*/
+    }
+    .contact-section .grid {
+        grid-template-columns: repeat(2, 1fr); /*Muda o layout para uma grade de 2 colunas, colocando as caixas de contato (E-mail e Telefone) lado a lado.*/
+    }
+}
