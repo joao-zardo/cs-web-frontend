@@ -84,6 +84,13 @@ a {
     background-color: #1C357A; /* Azul mais escuro quando o mouse passa por cima do botão*/
 }
 
+/* --- Adicionado para o botão de cadastro ativo --- */
+.cta-button.active {
+    background-color: #FBBF24; /* Amarelo */
+    color: #1E3A8A; /* Texto azul */
+    cursor: default; /* Impede o efeito hover e indica que a página já está ativa */
+}
+
 /* --- Alinhamento e espaçamento dos itens da navegação --- */
 
 .main-nav > .logo { /* O símbolo > garante que o estilo seja aplicado somente ao elemento .logo que está no primeiro nível hierárquico dentro de .main-nav */
@@ -124,6 +131,7 @@ section {
 }
 
 .main-image {
+    max-width: 64rem; /* Limita a largura da imagem (1024px) para que a centralização funcione */
     border-radius: 0.5rem; /*Arredonda os cantos da imagem*/
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /*Adiciona uma sombra sutil para dar profundidade*/
 }
@@ -214,6 +222,84 @@ section {
 
 .contact-box a:hover { /*Centraliza o texto e adiciona um efeito de sublinhado (underline) quando o usuário passa o mouse sobre o link de contato*/
     text-decoration: underline;
+}
+
+/* --- Página de Cadastro --- */
+.form-section {
+    max-width: 48rem; /* 768px */
+    margin: 0 auto; /* Centraliza a seção do formulário */
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-section p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4a5568;
+}
+
+.main-form fieldset {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.main-form legend {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1E3A8A; /* Azul */
+    padding: 0 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group:last-child { /* Esta é uma "pseudo-classe" que significa "o último filho"*/
+    margin-bottom: 0; /* Remove a margem inferior do último grupo de formulário para evitar espaço extra desnecessário */
+}
+
+.form-group label {
+    display: block; /* Faz o label ocupar toda a largura disponível, garantindo que o input fique na linha de baixo */
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus { /* aplica-se a um campo <input> apenas no exato momento em que ele está "em foco", ou seja, quando o cursor do utilizador está a piscar dentro dele.*/
+    outline: none; /* Remove a borda azul padrão que alguns navegadores aplicam ao focar um campo */
+    border-color: #1E3A8A; /* Cria a borda azul no tom da identidade visual da banda */
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    background-color: #1E3A8A; /* Azul */
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #1C357A; /* Azul mais escuro */
 }
 
 
