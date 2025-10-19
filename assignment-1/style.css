@@ -46,12 +46,22 @@ a {
     align-items: center; /* Alinha verticalmente os itens ao centro */
     padding-top: 1rem; /* Adiciona um espaçamento interno vertical para que os itens não fiquem colados nas bordas superior e inferior*/
     padding-bottom: 1rem;
+    justify-content: space-between; /* Adiciona espaço entre os itens, empurrando a logo para a esquerda e os links para a direita */ 
+}
+
+.main-nav ul {
+    display: flex;   
+    list-style-type: none;
+    padding: 0;
+    margin: 1.5rem;
+    gap: 1.5rem;
 }
 
 .logo img {
     height: 100px; /* Define a altura da imagem do logo */
     width: auto; /* Mantém a proporção da imagem */
     display: block; /* Remove espaçamentos indesejados */
+    margin: 1rem;
 }
 
 .nav-link {
@@ -89,17 +99,6 @@ a {
     background-color: #FBBF24; /* Amarelo */
     color: #1E3A8A; /* Texto azul */
     cursor: default; /* Impede o efeito hover e indica que a página já está ativa */
-}
-
-/* --- Alinhamento e espaçamento dos itens da navegação --- */
-
-.main-nav > .logo { /* O símbolo > garante que o estilo seja aplicado somente ao elemento .logo que está no primeiro nível hierárquico dentro de .main-nav */
-    margin-right: auto; /* O "auto" faz com que o navegador use todo o espaço disponível para empurrar os outros itens para a direita */
-}
-
-.main-nav > .nav-link, /* O símbolo > garante que o estilo seja aplicado somente aos elementos .nav-link que estão no primeiro nível hierárquico dentro de .main-nav */
-.main-nav > .cta-button { /* Seleciona o botão de chamada para ação dentro do .main-nav */
-    margin-left: 1.5rem; /* Adiciona um espaçamento à esquerda de cada link e do botão */
 }
 
 /* --- Conteúdo Principal --- */
