@@ -12,7 +12,6 @@
 </head>
 <body> <!-- Corpo do site -->
     <header class="main-header"> <!-- Cabeçalho e Navegação -->
-        <div class="container"> <!--Uso de div dentro da estrutura semântica para possibilitar uso de style. Class é o rótulo/etiqueta que possibilita receber o estilo que eu definir-->
             <nav class="main-nav">
                 <a href="index.html" class="logo"> <!--Ao clicar na logo volta para a página inicial-->
                     <img src="imagens/logo.png" alt="Logo da Banda Alvorada"> <!--Logo da banda, alt é o texto "alternativo" da imagem, é o que o SEO lê-->
@@ -21,14 +20,13 @@
                 <a href="projetos.html" class="nav-link">Projetos Sociais</a> <!--link para a página de projetos sociais-->
                 <a href="cadastro.html" class="cta-button">Cadastre-se</a> <!--Call to Action, botão que chama para ação, neste caso para cadastro-->
             </nav>
-        </div>
     </header>
     <main class="container"> <!--Conteúdo principal da página-->
 
         <section class="welcome-section"> <!--Seção de boas-vindas-->
             <h1>Banda Marcial Alvorada</h1> <!--H1 é o título mais importante da página-->
             <p>Música, disciplina e transformação social. Conheça a nossa batida que move corações e constrói futuros.</p> <!--Parágrafo introdutório-->
-            <img src="imagens/hero-desktop.jpg" alt="Apresentação da Banda Marcial Alvorada em um desfile cívico" class="main-image"> <!--Imagem principal da página-->
+            <img src="imagens/hero-desktop.jpg" alt="Apresentação da Banda Marcial Alvorada em um desfile cívico" style="margin-top: 2rem; border-radius: 0.5rem;"> <!--Imagem principal da página-->
         </section>
 
         <section id="sobre" class="about-section"> <!--Seção sobre nós. O uso do id serve para permitir a criação de links diretos para partes específicas do conteúdo da página (id="sobre", id="valores", id="contato")-->
@@ -43,7 +41,7 @@
                     </p>
                 </div>
                 <div> <!--div "filho" define o que vai na segunda coluna-->
-                    <img src="imagens/banner-história.jpg" alt="Membros da banda ensaiando em uma sala.">
+                    <img src="imagens/banner-história.jpg" alt="Membros da banda ensaiando em uma sala." style="margin-top: 2rem; border-radius: 0.5rem;">
                 </div>
             </div>
         </section>

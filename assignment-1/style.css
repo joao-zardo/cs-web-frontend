@@ -130,12 +130,6 @@ section {
     margin: 0.5rem auto 2rem auto; /*Define a margem superior (0.5rem), a margem da direita (auto), a margem inferior (2rem) e a margem da esquerda (auto). Como esquerda e direita é auto, vai centralizar*/
 }
 
-.main-image {
-    max-width: 64rem; /* Limita a largura da imagem (1024px) para que a centralização funcione */
-    border-radius: 0.5rem; /*Arredonda os cantos da imagem*/
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /*Adiciona uma sombra sutil para dar profundidade*/
-}
-
 /* Seção Sobre, Valores e Contato */
 .section-title { /* Classe reutilizável para os títulos das seções */
     font-size: 2rem;
