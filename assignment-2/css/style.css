@@ -35,64 +35,135 @@ a {
 /* --- Cabeçalho e Navegação --- */
 /*-------------------------------*/
 
-.main-header { /*Estiliza a barra do cabeçalho principal*/
-    background-color: var(--color-neutral-0);
-    box-shadow: var(--box-shadow-md);
-    position: sticky; /* Faz o cabeçalho "grudar" no topo da página ao rolar para baixo */
-    top: 0; /* Define a posição do topo quando o cabeçalho está sticky */
-    z-index: 50; /* Garante que o cabeçalho fique acima de outros elementos */
-}
-
+/* --- Configuração Base da Navegação --- */
 .main-nav {
-    display: flex; /*Organiza os itens (logo e links) em uma linha horizontal*/
-    align-items: center; /* Alinha verticalmente os itens ao centro */
-    padding-top: var(--space-xs); /* Adiciona um espaçamento interno vertical para que os itens não fiquem colados nas bordas superior e inferior*/
-    padding-bottom: var(--space-xs);
-    justify-content: space-between; /* Adiciona espaço entre os itens, empurrando a logo para a esquerda e os links para a direita */ 
+  display: flex;
+  justify-content: space-between; /* Alinha logo e menu/botão */
+  align-items: center;
+  padding: 1rem; /* Espaçamento interno */
+  position: relative; /* Importante para o menu dropdown */
 }
 
-.main-nav ul {
-    display: flex;   
-    list-style-type: none;
-    padding: 0;
-    margin: var(--space-md);
-    gap: var(--space-md);
+/* --- Botão Hamburguer (Visível no Mobile) --- */
+.hamburger-menu {
+  display: block; /* Mostra o botão em telas pequenas */
+  font-size: 1.8rem; /* Tamanho do ícone */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333; /* Cor do ícone */
+}
+
+/* --- Lista de Links (Mobile - Escondido por padrão) --- */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  /* Esconde o menu por padrão no mobile */
+  display: none; 
+  flex-direction: column; /* Links um abaixo do outro */
+  
+  /* Posicionamento Dropdown */
+  position: absolute;
+  top: 100%; /* Começa logo abaixo do header */
+  left: 0;
+  width: 100%;
+  background-color: white; /* Fundo branco para o menu */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* --- CLASSE ATIVA (Quando o menu é aberto pelo JS) --- */
+.nav-links.is-active {
+  display: flex; /* Mostra o menu */
+}
+
+/* Estilos dos links no menu mobile */
+.nav-links li {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-links .nav-link,
+.nav-links .cta-button {
+  display: block;
+  padding: 1.2rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-links li:last-child .cta-button {
+  border-bottom: none;
+}
+
+/* Estilo do botão CTA no menu mobile */
+.cta-button {
+  background-color: #f0ad4e; /* Cor de exemplo para o CTA */
+  color: white;
+  margin: 0;
+  border-radius: 0;
 }
 
 .logo img {
     height: 100px; /* Define a altura da imagem do logo */
     width: auto; /* Mantém a proporção da imagem */
-    margin: var(--space-xs);
+    display: block; /* Remove espaçamentos indesejados */
+    margin: 0.2rem 1.5rem;
 }
 
-.nav-link.active { /* Estilo para o link ativo (página atual) */
-    font-weight: 600; /* Deixa o texto mais negrito */
-    border-bottom: 2px solid var( --color-secondary-base); /* Adiciona a linha amarela embaixo do texto, indicando que aquela é a página atual */
-    padding-bottom: 4px; /* Cria um pequeno espaço entre o texto e a linha amarela */
-}
 
-.nav-link:hover { /* O hover é uma pseudo-classe que aplica estilos quando o usuário passa o mouse sobre o elemento, isso indica que o link é clicável */
-    color: var(--color-primary-base); /* a cor do texto muda para azul quando o mouse passa sobre o elemento */
-}
+/* --- LAYOUT DESKTOP (Telas Maiores) --- */
+
+@media (min-width: 768px) {
+  
+  /* Esconde o botão hamburguer no desktop */
+  .hamburger-menu {
+    display: none;
+  }
+
+  /* Mostra a lista de links e a formata na horizontal */
+  .nav-links {
+    display: flex;
+    flex-direction: row; /* Links lado a lado */
+    position: static; /* Remove posicionamento absoluto */
+    width: auto; /* Largura automática */
+    background-color: transparent;
+    box-shadow: none;
+    align-items: center; /* Alinha verticalmente */
+  }
+
+  /* Reseta estilos mobile dos LIs */
+  .nav-links li {
+    width: auto;
+  }
+  
+  .nav-links .nav-link,
+  .nav-links .cta-button {
+    padding: 0.5rem 1rem; /* Padding menor para desktop */
+    border-bottom: none;
+  }
 
 .cta-button { /* Call to Action - Botão de Chamada para Ação */
-    background-color: var(--color-primary-base); /* Fundo azul */
-    color: var(--color-neutral-0); /* Texto branco */
+    background-color: #1E3A8A; /* Fundo azul */
+    color: #ffffff; /* Texto branco */
     font-weight: 700; /* Texto em negrito */
     padding: 0.5rem 1rem; /* Espaçamento interno para não ficar "apertado" */
     border-radius: 0.5rem; /* Bordas arredondadas */
     transition: background-color 0.3s ease; /* Transição suave para a mudança de cor ao passar o mouse */
 }
-
 .cta-button:hover {
-    background-color: var(--color-primary-dark); /* Azul mais escuro quando o mouse passa por cima do botão*/
+    background-color: #1C357A; /* Azul mais escuro quando o mouse passa por cima do botão*/
 }
 
 /* --- Adicionado para o botão de cadastro ativo --- */
 .cta-button.active {
-    background-color: var(--color-secondary-base); /* Amarelo */
-    color: var(--color-primary-dark); /* Texto azul */
+    background-color: #FBBF24; /* Amarelo */
+    color: #1E3A8A; /* Texto azul */
     cursor: default; /* Impede o efeito hover e indica que a página já está ativa */
+}
+
 }
 
 /* --- Conteúdo Principal --- */

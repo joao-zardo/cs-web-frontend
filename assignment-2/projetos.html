@@ -14,16 +14,26 @@
 <body>
 
      <header class="main-header">
-        <nav class="main-nav">           
-            <a href="index.html" class="logo">
-                <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
-            </a>
-            <ul>
-            <li><a href="index.html" class="nav-link">Início</a></li>
-            <li><a href="projetos.html" class="nav-link active">Projetos Sociais</a></li>
-            <li><a href="membros.html" class="nav-link">Equipe</a></li>
-            <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li> <!--Call to Action, botão que chama para ação, neste caso para cadastro-->
-            </nav>
+  <nav class="main-nav">
+    
+    <a href="index.html" class="logo">
+      <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
+    </a>
+
+    <button class="hamburger-menu" 
+            aria-label="Abrir menu" 
+            aria-expanded="false" 
+            aria-controls="nav-links">
+      &#9776; </button>
+    
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link">Início</a></li>
+      <li><a href="projetos.html" class="nav-link active">Projetos Sociais</a></li>
+      <li><a href="membros.html" class="nav-link">Equipe</a></li>
+      <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li>
+    </ul>
+
+  </nav>
     </header>
 
     <main class="container">
@@ -94,6 +104,6 @@
             <p class="credits">Desenvolvido por João Zardo.</p>
         </div>
     </footer>
-
+    <script src="js/script.js"></script> 
 </body>
 </html>
