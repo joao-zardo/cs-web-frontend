@@ -13,8 +13,10 @@
   /* Cores Primárias (Azul) */
   --color-primary-dark: #1E3A8A;   /* Azul Escuro - Cor 1 */
   --color-primary-base: #152cb3;   /* Azul Principal - Cor 2 */
+  --color-primary-light: #2563eb;  /* Azul Claro - Cor 10 */
 
   /* Cores Secundárias (Amarelo) */
+  --color-secondary-dark: #d9a106; /* Amarelo Escuro - Cor 11 */
   --color-secondary-base: #FBBF24; /* Amarelo Principal - Cor 3 */
   --color-secondary-light: #FEF3C7;/* Amarelo Claro - Cor 4 */
   

@@ -6,8 +6,8 @@
 
 body { /* Estilos aplicados ao corpo da página "body" */
     font-family: var(--font-base); /* Define a fonte principal do site, se não conseguir a fonte Inter, vai usar uma fonte genérica */
-    background-color: #f7fafc; /* cor padrão do fundo */
-    color: #2d3748; /* cor padrão do texto */
+    background-color: var(--color-neutral-100); /* cor padrão do fundo */
+    color: var(--color-neutral-700); /* cor padrão do texto */
     line-height: 1.6; /* espaçamento entre as linhas de um parágrafo */
 }
 
@@ -44,6 +44,14 @@ a {
   position: relative; /* Importante para o menu dropdown */
 }
 
+.main-header {
+    background-color: var(--color-primary-dark); /* Fundo azul */
+    box-shadow: var(--box-shadow-md); /* Sombra sutil para destacar o cabeçalho */
+    position: sticky; /* Faz o cabeçalho "grudar" no topo da página ao rolar para baixo */
+    top: 0; /* Define a posição do topo quando o cabeçalho está sticky */
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
 /* --- Botão Hamburguer (Visível no Mobile) --- */
 .hamburger-menu {
   display: block; /* Mostra o botão em telas pequenas */
@@ -51,7 +59,7 @@ a {
   background: none;
   border: none;
   cursor: pointer;
-  color: #333; /* Cor do ícone */
+  color: var(--color-neutral-100); /* Cor do ícone */
 }
 
 /* --- Lista de Links (Mobile - Escondido por padrão) --- */
@@ -69,8 +77,8 @@ a {
   top: 100%; /* Começa logo abaixo do header */
   left: 0;
   width: 100%;
-  background-color: white; /* Fundo branco para o menu */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: var(--color-neutral-0); /* Fundo branco para o menu */
+  box-shadow: var(--box-shadow-md);
   z-index: 1000;
 }
 
@@ -83,6 +91,8 @@ a {
 .nav-links li {
   width: 100%;
   text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .nav-links .nav-link,
@@ -90,8 +100,8 @@ a {
   display: block;
   padding: 1.2rem 1rem;
   text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #f0f0f0;
+  color: var(--color-neutral-700);
+  border-bottom: 1px var(--color-neutral-300) solid;
 }
 
 .nav-links li:last-child .cta-button {
@@ -100,8 +110,7 @@ a {
 
 /* Estilo do botão CTA no menu mobile */
 .cta-button {
-  background-color: #f0ad4e; /* Cor de exemplo para o CTA */
-  color: white;
+  background-color: var(--color-secondary-base); /* Cor do botão CTA */
   margin: 0;
   border-radius: 0;
 }
@@ -145,28 +154,42 @@ a {
     border-bottom: none;
   }
 
+   .nav-links .nav-link {
+    color: var(--color-neutral-300);
+   } 
+
+   .nav-link.active { /* Estilo para o link ativo (página atual) */
+    font-weight: 600; /* Deixa o texto mais negrito */
+    border-bottom: 2px solid var(--color-secondary-base); /* Adiciona a linha amarela embaixo do texto, indicando que aquela é a página atual */
+    padding-bottom: 4px; /* Cria um pequeno espaço entre o texto e a linha amarela */
+}
+
 .cta-button { /* Call to Action - Botão de Chamada para Ação */
-    background-color: #1E3A8A; /* Fundo azul */
+    background-color: var(--color-secondary-base);
     color: #ffffff; /* Texto branco */
     font-weight: 700; /* Texto em negrito */
     padding: 0.5rem 1rem; /* Espaçamento interno para não ficar "apertado" */
     border-radius: 0.5rem; /* Bordas arredondadas */
     transition: background-color 0.3s ease; /* Transição suave para a mudança de cor ao passar o mouse */
+    margin-left: 1rem; /* Espaçamento à esquerda para separar do link anterior */
 }
 .cta-button:hover {
-    background-color: #1C357A; /* Azul mais escuro quando o mouse passa por cima do botão*/
+    background-color: var(--color-secondary-dark); /* Amarelo mais escuro quando o mouse passa por cima do botão*/
 }
 
 /* --- Adicionado para o botão de cadastro ativo --- */
 .cta-button.active {
-    background-color: #FBBF24; /* Amarelo */
-    color: #1E3A8A; /* Texto azul */
+    background-color: var(--color-primary-base);
+    color: var(--color-neutral-100); /* Texto azul */
     cursor: default; /* Impede o efeito hover e indica que a página já está ativa */
 }
 
 }
 
-/* --- Conteúdo Principal --- */
+/*----------------------------------*/
+/* --- Conteúdo Principal/Geral --- */
+/*----------------------------------*/
+
 main { /* Estilos aplicados ao elemento principal "main" */
     padding-top: 3rem; /* Espaçamento interno no topo e na base para que o conteúdo não fique colado no cabeçalho e no rodapé */
     padding-bottom: 3rem;
@@ -180,11 +203,12 @@ section {
     text-align: center;
 }
 
-.welcome-section h1 { /*estiliza o título <h1> que está dentro da seção de boas-vindas*/
+h1 { /*estiliza o título <h1> que está dentro da seção de boas-vindas*/
     font-size: 2.5rem; /*Aumenta o tamanho da fonte*/
     font-weight: 700;
-    color: #1a202c; /* cor preta/cinza muito escuro */
+    color: var(--color-neutral-900); /* cor preta/cinza muito escuro */
     margin-bottom: 1rem; /* pequeno espaço abaixo do título, separando-o do parágrafo*/
+    text-align: center; /* Centraliza o título horizontalmente */
 }
 
 .welcome-section p { /*Estiliza o parágrafo <p> dentro da seção de boas-vindas*/
