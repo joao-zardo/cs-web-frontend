@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Verifica se os dois elementos existem antes de adicionar o evento
   if (hamburgerBtn && navLinks) {
     
-    // Adiciona um evento de "click" ao botão
+    // --- Código Hamburguer ---
     hamburgerBtn.addEventListener('click', () => {
       
       // Alterna (adiciona/remove) a classe 'is-active' na lista de links
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Atualiza os atributos de acessibilidade
       hamburgerBtn.setAttribute('aria-expanded', isActive);
 
-      // (Opcional) Muda o ícone e o rótulo do botão
+      //Muda o ícone e o rótulo do botão
       if (isActive) {
         hamburgerBtn.innerHTML = '&times;'; // Ícone 'X' (fechar)
         hamburgerBtn.setAttribute('aria-label', 'Fechar menu');
@@ -28,6 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburgerBtn.innerHTML = '&#9776;'; // Ícone Hamburguer
         hamburgerBtn.setAttribute('aria-label', 'Abrir menu');
       }
+    });
+
+    // Lógica para fechar o menu ao clicar em um link.
+    // Seleciona TODOS os links (<a>) que estão dentro do menu (#nav-links)
+    const allLinks = navLinks.querySelectorAll('a');
+    // Cria um loop e adiciona um "escutador de clique" em CADA link
+    allLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // FORÇA o fechamento do menu
+        //    (Não usamos 'toggle', e sim 'remove' para garantir que feche)
+        navLinks.classList.remove('is-active');
+        // Reseta o botão do hamburger para o estado "fechado"
+        //    (Isso garante que o botão volte ao normal)
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        hamburgerBtn.innerHTML = '&#9776;'; // Ícone Hamburguer
+        hamburgerBtn.setAttribute('aria-label', 'Abrir menu');
+      });
     });
   }
 });

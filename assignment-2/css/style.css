@@ -111,6 +111,10 @@ a {
   border-bottom: none;
 }
 
+.nav-links li:nth-last-child(2) .nav-link {
+  border-top: 1px var(--color-neutral-300) solid; /* Adiciona uma borda superior ao penúltimo link para separar do botão CTA */
+}
+
 /* Estilo do botão CTA no menu mobile */
 .cta-button {
   background-color: var(--color-secondary-base); /* Cor do botão CTA */
@@ -130,16 +134,28 @@ a {
 
 /*Esconde o submenu em TODAS as telas por padrão */
 .submenu {
-  display: none;
+  display: block;
   list-style: none; /* Remove bolinhas da lista */
   padding: 0;
   margin: 0;
 }
 
+.submenu li {
+
+  color: #555; /* Exemplo: um cinza mais claro */
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 0.9em; /* Um pouco menor que o link pai */
+  font-weight: 400;
+  text-align: center;
+}
+
+
 /*Esconde a seta em TODAS as telas por padrão (mobile-first) */
 .seta-desktop {
   display: none;
 }
+
 /*Ao usar o menu dropdown o título não será coberto pelo cabeçalho*/
 #oficinas,
 #solidaria,
@@ -160,7 +176,7 @@ a {
 
   /* Mostra a lista de links e a formata na horizontal */
   .nav-links {
-    display: flex;
+    display: flex !important;
     flex-direction: row; /* Links lado a lado */
     position: static; /* Remove posicionamento absoluto */
     width: auto; /* Largura automática */
@@ -168,6 +184,10 @@ a {
     box-shadow: none;
     align-items: center; /* Alinha verticalmente */
   }
+
+  .nav-links li:nth-last-child(2) .nav-link {
+  border-top: none; /* Retira a borda superior que foi adicionada para o mobile*/
+}
 
   /* Reseta estilos mobile dos LIs */
   .nav-links li {
@@ -227,6 +247,7 @@ a {
 
   /* Estiliza o submenu que vai flutuar */
   .submenu {
+    display:none;
     position: absolute;   /* Tira o submenu do fluxo normal */
     top: 100%;            /* Posiciona logo abaixo do <li> pai */
     left: 0;
