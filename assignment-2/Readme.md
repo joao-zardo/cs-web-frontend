@@ -8,13 +8,13 @@
 ### Leiautes Responsivos com Flexbox e Grid
 * [ ] Implementar leiaute principal usando CSS grid para estrutura geral;
 * [ ] Utilizar flexbox para componentes internos e alinhamentos;
-* [ ] Criar no mínimo 5 breakpoints responsivos bem definidos;
-* [ ] Desenvolver sistema de grid customizado (12 colunas);
+* [X] Criar no mínimo 5 breakpoints responsivos bem definidos;
+* [X] Desenvolver sistema de grid customizado (12 colunas);
 * [ ] Implementar leiautes específicos para diferentes tipos de conteúdo.
 
 ### Navegação Sofisticada e Interativa
 * [ ] Criar menu principal responsivo com submenu dropdown;
-* [ ] Implementar navegação mobile com menu hambúrguer.
+* [X] Implementar navegação mobile com menu hambúrguer.
 
 ### Componentes de Interface
 * [ ] Desenvolver sistema de cards responsivos para projetos;
