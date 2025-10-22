@@ -1,0 +1,47 @@
+/*--------------------------------*/
+/* --- Componente: Formulário --- */
+/*--------------------------------*/
+
+.main-form fieldset {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.main-form legend {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary-dark); /* Azul */
+    padding: 0 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group:last-child { /* Esta é uma "pseudo-classe" que significa "o último filho"*/
+    margin-bottom: 0; /* Remove a margem inferior do último grupo de formulário para evitar espaço extra desnecessário */
+}
+
+.form-group label {
+    display: block; /* Faz o label ocupar toda a largura disponível, garantindo que o input fique na linha de baixo */
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus { /* aplica-se a um campo <input> apenas no exato momento em que ele está "em foco", ou seja, quando o cursor do utilizador está a piscar dentro dele.*/
+    outline: none; /* Remove a borda azul padrão que alguns navegadores aplicam ao focar um campo */
+    border-color: var(--color-primary-dark); /* Cria a borda azul no tom da identidade visual da banda */
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}

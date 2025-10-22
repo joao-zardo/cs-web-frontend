@@ -1,0 +1,53 @@
+/*----------------*/
+/* --- Botões --- */
+/*----------------*/
+
+/* Estilo do botão CTA no menu mobile */
+.cta-button {
+  background-color: var(--color-secondary-base); /* Cor do botão CTA */
+  margin: 0;
+  border-radius: 0;
+}
+
+@media (min-width: 768px) {
+    .cta-button { /* Call to Action - Botão de Chamada para Ação */
+    background-color: var(--color-secondary-base);
+    color: #ffffff; /* Texto branco */
+    font-weight: 700; /* Texto em negrito */
+    padding: 0.5rem 1rem; /* Espaçamento interno para não ficar "apertado" */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave para a mudança de cor ao passar o mouse */
+    margin-left: 1rem; /* Espaçamento à esquerda para separar do link anterior */
+}
+
+.cta-button:hover {
+    background-color: var(--color-secondary-dark); /* Amarelo mais escuro quando o mouse passa por cima do botão*/
+}
+
+/* --- Adicionado para o botão de cadastro ativo --- */
+.nav-links .cta-button.active {
+    background-color: var(--color-primary-base);
+    color: var(--color-neutral-300);
+    cursor: default; /* Impede o efeito hover e indica que a página já está ativa */
+}
+}
+
+/* --- Botão enviar cadastro --- */
+
+.submit-button {
+    display: block;
+    width: 100%;
+    background-color: var(--color-primary-dark);
+    color: var(--color-neutral-0);
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #1C357A;
+}

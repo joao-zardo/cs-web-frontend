@@ -1,0 +1,19 @@
+/*--------------------*/
+/* --- Tipografia --- */
+/*--------------------*/
+
+h1 { /*estiliza o título <h1> que está dentro da seção de boas-vindas*/
+    font-size: 2.5rem; /*Aumenta o tamanho da fonte*/
+    font-weight: 700;
+    color: var(--color-neutral-900); /* cor preta/cinza muito escuro */
+    margin-bottom: 1rem; /* pequeno espaço abaixo do título, separando-o do parágrafo*/
+    text-align: center; /* Centraliza o título horizontalmente */
+}
+
+.section-title { /* Classe reutilizável para os títulos das seções */
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1a202c;
+    margin-bottom: 2rem;
+}
