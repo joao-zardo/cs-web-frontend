@@ -33,10 +33,10 @@
 }   
 
 .container .team-section p { 
-    font-size: 1.125rem;
-    color: #4a5568;
+    font-size: var(--font-size-p);
+    color: var(--color-neutral-500);
     text-align: center;
-    margin: 0.5rem auto 2rem auto; /*Define a margem superior (0.5rem), a margem da direita (auto), a margem inferior (2rem) e a margem da esquerda (auto). Como esquerda e direita é auto, vai centralizar*/
+    margin: var(--space-xs) auto var(--space-lg) auto; /*Define a margem superior (0.5rem), a margem da direita (auto), a margem inferior (2rem) e a margem da esquerda (auto). Como esquerda e direita é auto, vai centralizar*/
 } 
 
 

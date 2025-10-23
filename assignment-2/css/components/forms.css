@@ -3,21 +3,21 @@
 /*--------------------------------*/
 
 .main-form fieldset {
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-neutral-200);
     border-radius: 0.5rem;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
 }
 
 .main-form legend {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-primary-dark); /* Azul */
-    padding: 0 0.5rem;
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary-dark);
+    padding: 0 var(--space-xs);
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-md);
 }
 
 .form-group:last-child { /* Esta é uma "pseudo-classe" que significa "o último filho"*/
@@ -26,22 +26,23 @@
 
 .form-group label {
     display: block; /* Faz o label ocupar toda a largura disponível, garantindo que o input fique na linha de baixo */
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: #2d3748;
+    font-weight: var(--font-weight-regular);
+    margin-bottom: var(--space-xs);
+    color: var(--color-neutral-700);
 }
 
 .form-group input {
+    box-sizing: border-box;
     width: 100%;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border: 1px solid #cbd5e0;
+    padding: var(--space-sm);
+    font-size: var( --font-size-p);
+    border: 1px solid var( --color-neutral-300);
     border-radius: 0.25rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition-border), var(--transition-box);
 }
 
 .form-group input:focus { /* aplica-se a um campo <input> apenas no exato momento em que ele está "em foco", ou seja, quando o cursor do utilizador está a piscar dentro dele.*/
     outline: none; /* Remove a borda azul padrão que alguns navegadores aplicam ao focar um campo */
     border-color: var(--color-primary-dark); /* Cria a borda azul no tom da identidade visual da banda */
-    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+    box-shadow: var(--box-shadow-md);
 }

@@ -4,22 +4,22 @@
 
 .card { /* Estilo para os cartões de valores */
     background-color: var(--color-neutral-0);
-    padding: 1.5rem;
+    padding: var(--space-md);
     border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /*cria a animação suave para o efeito :hover*/
+    box-shadow: var(--box-shadow-md);
+    transition: var(--transition-transform), var(--transition-box); /*cria a animação suave para o efeito :hover*/
 }
 
 .card:hover { /*Efeito ao passar o mouse sobre o card, faz o card subir um pouco e a sombra aumenta. Da um efeito de mais "destacado" e fica bonito*/
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: var(--transition-translate);
+    box-shadow: var(--box-shadow-lg);
 }
 
 .card h3 { /*Estiliza o título dentro de cada card, definindo o tamanho, a cor azul e o espaçamento*/
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-medium);
     color: var(--color-primary-dark); /* Azul */
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-xs);
 }
 
 /*---------------------------------*/
@@ -28,15 +28,15 @@
 
 .contact-box { /*Estiliza as caixas individuais de "E-mail" e "Telefone".*/
     background-color: var(--color-primary-dark); /* Azul mais escuro */
-    padding: 1.5rem;
+    padding: var(--space-md);
     border-radius: 0.5rem;
     text-align: center;
 }
 
 .contact-box h3 { /*Estiliza o título dentro de cada caixa de contato*/
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--space-xs);
 }
 
 .contact-box a:hover { /*Centraliza o texto e adiciona um efeito de sublinhado (underline) quando o usuário passa o mouse sobre o link de contato*/

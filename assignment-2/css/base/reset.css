@@ -18,8 +18,8 @@ body { /* Estilos aplicados ao corpo da página "body" */
     max-width: 1200px; /* Largura máxima do conteúdo para não esticar muito em telas grandes */
     margin-left: auto; /* Centraliza horizontalmente, juntamente com a linha de código abaixo */
     margin-right: auto;
-    padding-left: 1.5rem; /* Espaçamento interno nas laterais, garante que o conteúdo nunca cole nas bordas da tela */
-    padding-right: 1.5rem; /*Padding é o espaço que fica entre o conteúdo e a borda dessa caixa*/
+    padding-left: var(--space-md); /* Espaçamento interno nas laterais, garante que o conteúdo nunca cole nas bordas da tela */
+    padding-right: var(--space-md); /*Padding é o espaço que fica entre o conteúdo e a borda dessa caixa*/
 }
 
 img { /* Garante que as imagens sejam responsivas, ou seja se adaptam ao tamanho da tela*/

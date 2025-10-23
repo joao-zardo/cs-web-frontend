@@ -23,7 +23,9 @@
   /* Cores Neutras */
   --color-neutral-900: #111827; /* Quase Preto (Títulos) - Cor 5 */
   --color-neutral-700: #374151; /* Cinza Escuro (Texto) - Cor 6 */
+  --color-neutral-500: #6B7280; /* Cinza Médio (Texto Secundário) - Cor 13 */
   --color-neutral-300: #D1D5DB; /* Cinza Médio (Bordas) - Cor 7 */
+  --color-neutral-200: #e2e8f0; /* Cinza Suave/Ardósia (Form) - Cor 12 */
   --color-neutral-100: #F3F4F6; /* Cinza Claro (Fundos) - Cor 8 */
   --color-neutral-0: #FFFFFF;   /* Branco - Cor 9, objetivo alcançado */
 
@@ -40,7 +42,7 @@
   /* --- TIPOGRAFIA HIERÁRQUICA (Mínimo de 5 tamanhos) --- */
   --font-base: 'Inter', sans-serif;
   
-  --font-size-h1: 3rem;      /* Equivale a 48px. Usarei rem pois verifiquei que é mais responsivo, se eu estiver equivocado, por favor, professor(a) me corrija */
+  --font-size-h1: 3rem;      /* Equivale a 48px. Usarei rem pois verifiquei que tem maior acessibilidade */
   --font-size-h2: 2.25rem;   /* 36px */
   --font-size-h3: 1.75rem;   /* 28px */
   --font-size-h4: 1.25rem;   /* 20px */
@@ -51,7 +53,7 @@
   --font-weight-medium: 550; /* Espessura média */
   --font-weight-bold: 700; /* Espessura negrito */
 
-  /* --- SISTEMA DE ESPAÇAMENTO MODULAR (Base 8px) --- */
+  /* --- SISTEMA DE ESPAÇAMENTO MODULAR (Base 8px) Não usar em bordas --- */
   --space-xs:  0.5rem;  /* 8px */
   --space-sm:  1rem;    /* 16px */
   --space-md:  1.5rem;  /* 24px */
@@ -66,4 +68,11 @@
   --box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* sombra média */
   --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* sombra grande */
   --transition-base: all 0.3s ease; /* transição padrão */
+  --transition-back: background-color 0.3s ease; /* transição para background-color */
+  --transition-box: box-shadow 0.3s ease; /* transição para box-shadow */
+  --transition-transform: transform 0.3s ease; /* transição para transform */
+  --transition-translate: translateY(-5px);
+  --transition-border: border-color 0.3s ease;
+  --transition-seta: transform 0.2s ease-in-out;
+
 }

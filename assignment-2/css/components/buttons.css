@@ -12,12 +12,12 @@
 @media (min-width: 768px) {
     .cta-button { /* Call to Action - Botão de Chamada para Ação */
     background-color: var(--color-secondary-base);
-    color: #ffffff; /* Texto branco */
-    font-weight: 700; /* Texto em negrito */
-    padding: 0.5rem 1rem; /* Espaçamento interno para não ficar "apertado" */
+    color: var(--color-neutral-0); /* Texto branco */
+    font-weight: var(--font-weight-bold); /* Texto em negrito */
+    padding: var(--space-xs) var(--space-sm); /* Espaçamento interno para não ficar "apertado" */
     border-radius: 0.5rem; /* Bordas arredondadas */
-    transition: background-color 0.3s ease; /* Transição suave para a mudança de cor ao passar o mouse */
-    margin-left: 1rem; /* Espaçamento à esquerda para separar do link anterior */
+    transition: var(--transition-back); /* Transição suave para a mudança de cor ao passar o mouse */
+    margin-left: var(--space-sm); /* Espaçamento à esquerda para separar do link anterior */
 }
 
 .cta-button:hover {
@@ -37,22 +37,22 @@
 .submit-button {
     display: block;
     width: 100%;
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary-base);
     color: var(--color-neutral-0);
-    font-weight: 700;
-    font-size: 1.125rem;
-    padding: 1rem;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h4);
+    padding: var(--space-sm);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: var(--transition-back);
 }
 
 .submit-button:hover {
-    background-color: #1C357A;
+    background-color: var(--color-primary-dark);
 }
 
 .submit-button:disabled {
-    background-color: #A0AEC0; /* Cinza claro para indicar que está desativado */
+    background-color: var(--color-neutral-300); /* Cinza claro para indicar que está desativado */
     cursor: not-allowed; /* Muda o cursor para indicar que o botão não pode ser clicado */
 }
