@@ -51,3 +51,8 @@
 .submit-button:hover {
     background-color: #1C357A;
 }
+
+.submit-button:disabled {
+    background-color: #A0AEC0; /* Cinza claro para indicar que está desativado */
+    cursor: not-allowed; /* Muda o cursor para indicar que o botão não pode ser clicado */
+}

@@ -2,6 +2,15 @@
 /* --- Seções e Responsividade --- */
 /*---------------------------------*/
 
+main { /* Estilos aplicados ao elemento principal "main" */
+    padding-top: 3rem; /* Espaçamento interno no topo e na base para que o conteúdo não fique colado no cabeçalho e no rodapé */
+    padding-bottom: 3rem;
+}
+
+section { 
+    margin-bottom: 4rem; /* Espaçamento entre as seções para não ficarem coladas */
+}
+
 .welcome-section { /*Centraliza todo o texto e os elementos dentro da seção de boas-vindas*/
     text-align: center;
 }
