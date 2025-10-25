@@ -12,12 +12,15 @@
 
 ### Leiautes Responsivos com Flexbox e Grid
 * [X] Implementar leiaute principal usando CSS grid para estrutura geral;
-* [ ] Utilizar flexbox para componentes internos e alinhamentos;
+    * Local: diferentes locais, exemplo: grid em .cards-section (css/layout/sections.css) e flex no .card (css/components/cards.css)
+* [X] Utilizar flexbox para componentes internos e alinhamentos;
+    * Local: diferentes locais, exemplo: css/components/cards.css
 * [X] Criar no mínimo 5 breakpoints responsivos bem definidos; 
     * Local: página da equipe (membros.html) e no css desta página (css/pages/membros.css)
 * [X] Desenvolver sistema de grid customizado (12 colunas);
     * Local: página da equipe (membros.html) e no css desta página (css/pages/membros.css)
-* [ ] Implementar leiautes específicos para diferentes tipos de conteúdo.
+* [X] Implementar leiautes específicos para diferentes tipos de conteúdo.
+    * Local: diferentes locais, pricipalmente nos arquivos css/layout/.css
 
 ### Navegação Sofisticada e Interativa
 * [X] Criar menu principal responsivo com submenu dropdown;
@@ -26,7 +29,8 @@
     * Local: todas as páginas html e no css/layout/navigation.css
 
 ### Componentes de Interface
-* [ ] Desenvolver sistema de cards responsivos para projetos;
+* [X] Desenvolver sistema de cards responsivos para projetos;
+    * Local: cards no index.html, estilizados em css/layout/sections.css e botões (css/components/buttons.css)
 * [X] Criar botões com estados visuais (hover, focus, active, disabled);
     * Os estados visuais foram utilizados em diferentes locais. Alguns exemplos:
     * hover: botão cta do cabeçalho (css/components/buttons.css)

@@ -2,7 +2,10 @@
 /* --- Componente: Card Padrão --- */
 /*---------------------------------*/
 
-.card { /* Estilo para os cartões de valores */
+.card { /* Estilo para os cards*/
+    display: flex; /* Usa flexbox para organizar o conteúdo dentro do card*/
+    flex-direction: column; /* Organiza o conteúdo em coluna*/
+    gap: var(--space-md);
     background-color: var(--color-neutral-0);
     padding: var(--space-md);
     border-radius: 0.5rem;
@@ -20,6 +23,10 @@
     font-weight: var(--font-weight-medium);
     color: var(--color-primary-dark); /* Azul */
     margin-bottom: var(--space-xs);
+}
+
+.card p {
+    flex-grow: 1 /*alinha os botões*/
 }
 
 /*---------------------------------*/

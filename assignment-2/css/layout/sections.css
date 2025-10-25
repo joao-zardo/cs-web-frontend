@@ -46,7 +46,7 @@ section {
 }
 
 
-.values-section .grid { /*Ativa o layout de grade para os cards de valores*/
+.cards-section .grid { /*Ativa o layout de grade para os cards de valores*/
     display: grid;
     gap: var(--space-lg);
 }
@@ -74,7 +74,7 @@ section {
     .about-section .grid {
         grid-template-columns: repeat(2, 1fr); /*Muda o layout da seção sobre para uma grade de 2 colunas (repeat(2, 1fr)), colocando o texto e a imagem lado a lado.*/
     }
-    .values-section .grid {
+    .cards-section .grid {
         grid-template-columns: repeat(3, 1fr); /*Muda o layout para uma grade de 3 colunas, colocando os três cards de valores lado a lado.*/
     }
     .contact-section .grid {
