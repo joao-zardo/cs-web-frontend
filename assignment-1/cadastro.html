@@ -39,7 +39,7 @@
                     <div class="form-group"> <!-- Estou usando divs para deixar os campos com espaçamento-->
                         <label for="nome">Nome Completo</label>
                         <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo"> <!-- coloquei um placeholder a mais do que tinha na aula, é um texto de exemplo-->
-                        <!-- o input traz a validação mativa com atributos HTML5, atendendo ao requisito da tarefa-->
+                        <!-- o input traz a validação nativa com atributos HTML5, atendendo ao requisito da tarefa-->
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
@@ -93,40 +93,5 @@
             <p class="credits">Desenvolvido por João Zardo.</p>
         </div>
     </footer>
-
-    <!-- JavaScript para as máscaras dos campos, não vale a pena fazer um arquivo separado se irei usar javascript só aqui -->
-    <script>
-        // Primeiro, seleciono os campos (inputs) do formulário que quero manipular
-        const cpfInput = document.getElementById('cpf');
-        const telefoneInput = document.getElementById('telefone');
-        const cepInput = document.getElementById('cep');
-
-        // Máscara para CPF: 000.000.000-00, trata-se de um "ouvinte de eventos"
-        // Ele vai disparar uma função toda vez que o usuário digitar algo ('input').
-        cpfInput.addEventListener('input', (e) => {
-            // Pega o valor atual do campo e remove tudo que não for número (\D).
-            let value = e.target.value.replace(/\D/g, ''); // Adiciona um ponto (.) depois dos 3 primeiros dígitos.            
-            value = value.replace(/(\d{3})(\d)/, '$1.$2'); // Adiciona um ponto (.) depois dos 3 dígitos seguintes.      
-            value = value.replace(/(\d{3})(\d)/, '$1.$2'); // Adiciona um hífen (-) antes dos 2 últimos dígitos.          
-            value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Atualiza o valor do campo no formulário com a máscara.          
-            e.target.value = value;
-        });
-
-        // Máscara para Telefone: (00) 00000-0000
-        telefoneInput.addEventListener('input', (e) => {
-            let value = e.target.value.replace(/\D/g, '');
-            value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); // Coloca parênteses () nos dois primeiros dígitos (DDD).
-            value = value.replace(/(\d{5})(\d)/, '$1-$2'); // Coloca um traço (-) depois dos 5 dígitos seguintes.
-            e.target.value = value;
-        });
-
-        // Máscara para CEP: 00000-000
-        cepInput.addEventListener('input', (e) => {
-            let value = e.target.value.replace(/\D/g, ''); 
-            value = value.replace(/^(\d{5})(\d)/, '$1-$2'); // Coloca um traço (-) depois dos 5 primeiros dígitos.
-            e.target.value = value; // Atualiza o valor do campo.
-        });
-    </script>
-
 </body>
 </html>
