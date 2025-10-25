@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalConfirmBtn = document.getElementById('modal-botao-confirmar');
     const modalCancelBtn = document.getElementById('modal-botao-cancelar');
     const toast = document.getElementById('form-toast');
+    const statusContainer = document.getElementById('status-candidato');
+    const badgeElement = document.getElementById('badge-tipo-membro');
     
     // Lista de todos os inputs que precisam de validação
     const allInputs = [nomeInput, emailInput, cpfInput, telefoneInput, cepInput, enderecoInput, cidadeInput, estadoInput];
@@ -62,6 +64,36 @@ document.addEventListener('DOMContentLoaded', () => {
             toast.classList.remove('show');
             setTimeout(() => toast.style.display = 'none', 400);
         }, 3000);
+    }
+
+    function updateBadgeStatus() {
+        const selectedTags = tagsContainer.querySelectorAll('.tag.selected');
+        let isMusico = false;
+        let isApoio = false;
+
+        selectedTags.forEach(tag => {
+            const valor = tag.dataset.valor; // Pega o 'data-valor' da tag
+            if (['percussao', 'sopros', 'corpo-coreografico', 'bandeiras'].includes(valor)) {
+                isMusico = true;
+            }
+            if (valor === 'logistica') {
+                isApoio = true;
+            }
+        });
+
+    // Lógica de prioridade: "Músico" tem prioridade sobre "Apoio"
+        if (isMusico) {
+            badgeElement.textContent = "Músico/Artista";
+            badgeElement.className = "badge"; // Reseta para a classe/cor padrão
+            statusContainer.style.display = "block"; // Mostra o container
+        } else if (isApoio) {
+            badgeElement.textContent = "Voluntário/Apoio";
+            badgeElement.className = "badge badge-apoio"; // Aplica a cor de "apoio"
+            statusContainer.style.display = "block"; // Mostra o container
+        } else {
+            // Se nenhuma tag for selecionada, esconde o badge
+            statusContainer.style.display = "none";
+        }   
     }
 
     // --- 3. FUNÇÕES DE VALIDAÇÃO ESPECÍFICAS ---
@@ -192,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tag.classList.toggle('selected');
             checkButtonState(); // Checa o botão
             validateTags();     // Mostra erro/sucesso nas tags
+            updateBadgeStatus();
         });
         tag.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tag.click(); }
@@ -238,6 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const tagsFormGroup = tagsContainer.parentElement;
         tagsFormGroup.classList.remove('success', 'error');
         tagsFormGroup.querySelector('.validation-message').textContent = '';
+        
+        statusContainer.style.display = 'none';
         
         submitButton.disabled = true;
         showToast();

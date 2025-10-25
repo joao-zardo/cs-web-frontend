@@ -52,6 +52,9 @@
 
         <section class="form-section">
             <h1 class="section-title">Formulário de Cadastro</h1>
+            <p>Preencha os seus dados abaixo para se juntar à nossa comunidade...</p>
+
+    <form class="main-form" id="form-cadastro" novalidate>
             <p>Preencha os seus dados abaixo para se juntar à nossa comunidade. Entraremos em contato em breve!</p>
 
             <form class="main-form" id="form-cadastro" novalidate>
@@ -127,9 +130,14 @@
                         <small class="validation-message"></small>
                     </div>
                 </fieldset>
+            <div id="status-candidato" class="status-badge-container" style="display: none;">
+                <span class="badge-title">Tipo de Vaga:</span>
+                <span class="badge" id="badge-tipo-membro"></span>
+            </div>
                 <button type="submit" class="submit-button" id="btn-enviar" disabled>
                     Enviar Cadastro
                 </button>
+
             </form>
             <img src="Imagens/junte-se.jpg" alt="Membros da banda desfilando" style="margin-top: 2rem; border-radius: 0.5rem;">
         </section>

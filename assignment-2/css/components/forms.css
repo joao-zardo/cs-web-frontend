@@ -268,3 +268,42 @@
     opacity: 1;
     visibility: visible;
 }
+
+/*-----------------------------------------*/
+/* ---  Componente: Badge (Distintivo) --- */
+/*-----------------------------------------*/
+
+/* Container para alinhar)*/
+.status-badge-container {
+    text-align: center; /* Centraliza o badge */
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+    background-color: var(--color-neutral-100);
+    border-radius: 0.25rem;
+    border: 1px solid var(--color-neutral-200);
+}
+
+.badge-title {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-700);
+    margin-right: var(--space-xs);
+    font-size: var(--font-size-p);
+}
+
+/* O Badge (o distintivo visual) */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-neutral-0); /* Texto branco */
+    background-color: var(--color-primary-dark); /* Cor principal */
+    border-radius: 0.25rem; /* Mais "quadradinho" que a tag */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Variação de cor (ex: para "Apoio") */
+.badge.badge-apoio {
+    background-color: var(--color-info);
+}
