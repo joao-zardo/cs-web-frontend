@@ -51,7 +51,7 @@
     * Pastas divididas em html (pasta principal), css (base, components, layout e pages) e js
 * [X] Estrutura modular de CSS.
     * Módulos do CSS:
-        * Main: localizado na página principal, carrega todos os arquivos .css
+        * Main: localizado na página principal, carrega todos os arquivos .css, com exceção dos estilos específicos para as páginas cadastro e membros
         * Base: designsystem.css (variáveis), reset.css (reset geral), typography.css (tipografia utilizada)
         * Components: buttons.css (botões), cards.css (cards e contato), fomrs.css (formulário)
         * Layout: footer.css (rodapé), navigation.css (cabeçalho e navegação), sections.css (estilos das seções gerais)
