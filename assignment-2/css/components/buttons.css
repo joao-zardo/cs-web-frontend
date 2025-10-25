@@ -57,6 +57,10 @@
     transition: var(--transition-back);
 }
 
+#modal-botao-cancelar {
+    background-color: var(--color-secondary-base);
+}
+
 .submit-button:hover {
     background-color: var(--color-primary-dark);
 }

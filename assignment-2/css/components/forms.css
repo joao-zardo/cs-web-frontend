@@ -248,8 +248,8 @@
     position: fixed;
     bottom: var(--space-lg); /* Posição no canto */
     right: var(--space-lg);
-    background-color: var(--color-neutral-800); /* Cor escura */
-    color: var(--color-neutral-0); /* Texto claro */
+    background-color: var(--color-neutral-700); /* Cor escura */
+    color: var(--color-neutral-0); /* Texto branco */
     padding: var(--space-md);
     border-radius: 0.25rem;
     box-shadow: var(--box-shadow-lg);
