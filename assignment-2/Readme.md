@@ -37,14 +37,25 @@
     * focus: formulário da página cadastre-se (cadastro.html) no css (css/components/forms.css)
     * active: barra horizontal abaixo do link da página atual na navegação (css/layout/navigation.css)
     * disabled: botão de envio do formulário (cadastro.html), js na mesmo arquivo e estilo em (css/components/buttons.css)
-* [ ] Implementar formulários estilizados com validação visual;
-* [ ] Desenvolver componentes de feedback (alerts, toasts, modals);
-* [ ] Criar sistema de badges e tags para categorização.
+* [X] Implementar formulários estilizados com validação visual;
+    * Local: Formulário da página cadastro.html (cadastro.js e forms.css)
+* [X] Desenvolver componentes de feedback (alerts, toasts, modals);
+    * Local: Formulário da página cadastro.html (cadastro.js e forms.css)
+* [X] Criar sistema de badges e tags para categorização.
+    * Local: Formulário da página cadastro.html (cadastro.js e forms.css)
 
 ---
 ## O que deverá ser entregue:
 ### 1. CSS Organizados
-* [ ] Estrutura de pastas organizada (pastas, HTML, imagens e CSS);
-* [ ] Estrutura modular de CSS.
+* [X] Estrutura de pastas organizada (pastas, HTML, imagens e CSS);
+    * Pastas divididas em html (pasta principal), css (base, components, layout e pages) e js
+* [X] Estrutura modular de CSS.
+    * Módulos do CSS:
+        * Main: localizado na página principal, carrega todos os arquivos .css
+        * Base: designsystem.css (variáveis), reset.css (reset geral), typography.css (tipografia utilizada)
+        * Components: buttons.css (botões), cards.css (cards e contato), fomrs.css (formulário)
+        * Layout: footer.css (rodapé), navigation.css (cabeçalho e navegação), sections.css (estilos das seções gerais)
+        * Pages: contêm estilos que são utilizados apenas em páginas específicas (cadastro.css e membros.css)
 ### 2. Forma de Entrega
-* [ ] Link PÚBLICO do projeto no GitHub, com todo o código fonte e os arquivos HTML e imagens organizados em pastas.
+* [X] Link PÚBLICO do projeto no GitHub, com todo o código fonte e os arquivos HTML e imagens organizados em pastas.
+    * https://github.com/joao-zardo/cs-web-frontend/tree/main/assignment-2
