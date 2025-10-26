@@ -18,7 +18,7 @@
 * [X] No arquivo organizar os códigos por funcionalidade.
     * Funcionalidades:
     * cadastro.js
-    * membros.js
+    * templates.js
     * menu.js
     * router.js
 

@@ -1,9 +1,10 @@
-/* Espera o DOM (a página) carregar completamente antes de rodar o script */
-document.addEventListener('DOMContentLoaded', () => {
+/* 'DOMContentLoaded' NÃO é necessário aqui, pois este script será chamado manualmente pelo roteador (router.js). */
+
+// "Envelopamos" tudo em uma função com um nome claro
+function renderizarPaginaMembros() {
+    console.log('Renderizando template de membros...');
 
     /* --- 1. OS DADOS (DATA) --- */
-    // Esta é a sua nova "fonte da verdade". 
-    // Todo o seu HTML foi "traduzido" para este array de objetos.
     const membrosDaBanda = [
         {
             nome: "Geraldo Souza",
@@ -69,8 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     /* --- 2. O TEMPLATE (O "MOLDE" HTML) --- */
-    // Esta função "desenha" um membro. Ela é inteligente e sabe
-    // quais classes CSS usar com base no 'tipo' do membro.
+    // Esta função "desenha" um membro. Ela é inteligente e sabe quais classes CSS usar com base no 'tipo' do membro.
     function criarCardDeMembro(membro) {
         
         let classeDivPrincipal = '';
@@ -81,24 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (membro.tipo === 'bandmaster') {
             classeDivPrincipal = 'bandmaster-member';
             classeParagrafo = 'bandmaster-member-name';
-            // Recria exatamente o seu HTML (Função <br> Nome)
+            // (Função <parágrafo> Nome)
             textoParagrafo = `${membro.funcao} <br> ${membro.nome}`;
         } 
         else if (membro.tipo === 'board') {
             classeDivPrincipal = 'board-member';
             classeParagrafo = 'board-member-name';
-            // Recria exatamente o seu HTML (Função <br> Nome)
             textoParagrafo = `${membro.funcao} <br> ${membro.nome}`;
         } 
         else { // 'team'
             classeDivPrincipal = 'team-member';
             classeParagrafo = 'team-member-name';
-            // Recria exatamente o seu HTML (Apenas o Nome)
             textoParagrafo = membro.nome;
         }
 
-        // Retorna a string HTML final para este membro,
-        // usando as variáveis que acabamos de definir.
+        // Retorna a string HTML final para este membro, usando as variáveis definidas.
         return `
             <div class="${classeDivPrincipal}">
                 <img src="${membro.imagem}" alt="Foto de ${membro.nome}">
@@ -108,27 +105,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    /* --- 3. A LÓGICA (O "RENDERIZADOR") --- */
-    // Esta parte "liga" os Dados ao Template e os "injeta" na página.
-
-    // 1. Encontra o "palco" no seu HTML
-    // (Lembre-se de colocar este ID no seu membros.html!)
+/* --- 3. A LÓGICA (O "RENDERIZADOR") --- */
     const gridContainer = document.getElementById('membros-grid-container');
 
-    // 2. Verifica se o container existe na página
+    // IMPORTANTE: O gridContainer pode não existir se esta função for chamada
+    // na página errada, então o 'if' é crucial.
     if (gridContainer) {
         
-        // 3. Cria uma string vazia para acumular todo o HTML
         let htmlFinalDosCards = '';
-
-        // 4. Faz um loop no array de 'membrosDaBanda'
         membrosDaBanda.forEach(membro => {
-            // 5. "Desenha" o card de cada membro e o adiciona à string
             htmlFinalDosCards += criarCardDeMembro(membro);
         });
-
-        // 6. Injeta a string HTML completa no "palco" de uma só vez
         gridContainer.innerHTML = htmlFinalDosCards;
+
+    } else {
+        console.error('Container #membros-grid-container não encontrado!');
     }
 
-});
+}

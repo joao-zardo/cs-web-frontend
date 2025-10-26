@@ -51,6 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Atualiza o título da aba do navegador
             document.title = newTitle;
 
+            // PÓS-PROCESSAMENTO DO SPA
+            // Se a página que acabamos de carregar for a 'membros',
+            // chame a função para "desenhar" os membros para evitar o bug de não carregar.
+            if (url.includes('membros.html')) {
+                renderizarPaginaMembros();
+            }
+
             // Força a rolagem para o topo, se for uma nova navegação
             if (scrollToTop) {
                 window.scrollTo(0, 0);
@@ -101,8 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Se o link for para a página de cadastro, NÃO FAÇA NADA.
         // O 'return' vai deixar o navegador fazer o recarregamento normal.
         if (link.pathname.includes('cadastro.html')) {
-            console.log('Navegando para Cadastro, recarregamento completo.');
-            return;
+            console.log('Navegando para Cadastro (full load), recarregamento completo.');
+            return; 
         }
 
         // Se o link passou por todos os filtros:
