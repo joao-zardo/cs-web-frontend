@@ -17,10 +17,10 @@
     * Pastas divididas em html (pasta principal), css (base, components, layout e pages) e js
 * [X] No arquivo organizar os códigos por funcionalidade.
     * Funcionalidades:
-    * cadastro.js
-    * templates.js
-    * menu.js
-    * router.js
+    * cadastro.js: Gerencia a validação visual (erros/sucesso) e o fluxo de envio do formulário de cadastro, controlando os componentes de feedback (modal, toast e badges)
+    * templates.js: Contém a lógica de "templating". Define os dados (ex: array de membros) e a função que gera o HTML dinâmico para ser injetado na página
+    * menu.js: Controla a interatividade do menu de navegação, como a lógica para abrir e fechar o menu "hamburger" em dispositivos móveis
+    * router.js: Implementa a lógica de SPA (Single Page Application). Intercepta cliques nos links, carrega o conteúdo da página via fetch e o injeta no DOM sem recarregar a página
 
 ### Forma de Entrega
 * [X] Link PÚBLICO do projeto no GitHub, com todo o código fonte, os arquivos HTML, imagens e CSS organizados em pastas.
