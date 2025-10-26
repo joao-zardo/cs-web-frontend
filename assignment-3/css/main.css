@@ -24,3 +24,7 @@
 @import url('layout/navigation.css');    /* Define .navbar, .menu-item, .dropdown, header, .main-nav */
 @import url('layout/sections.css');      /* Define .container, estilos de seção*/
 @import url('layout/footer.css');        /* Define #footer */
+
+/* 5. Páginas Específicas (Estilos únicos para páginas específicas) */
+@import url('pages/membros.css'); /* Estilos exclusivos para a página de membros */
+@import url('pages/cadastro.css');    /* Estilos exclusivos para a página inicial */

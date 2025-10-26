@@ -1,0 +1,114 @@
+// Espera o DOM carregar
+document.addEventListener('DOMContentLoaded', () => {
+
+    // 1. ONDE O CONTEÚDO SERÁ INJETADO
+    const mainContent = document.getElementById('main-content');
+    
+    // 2. FUNÇÃO PARA ATUALIZAR O LINK ATIVO NO MENU
+    const updateActiveNav = (path) => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            // Se o href do link corresponde ao path, torna-o ativo
+            if (link.getAttribute('href') === path) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        // Trata o botão "Cadastre-se" (que é um cta-button)
+        const ctaButton = document.querySelector('.cta-button');
+        if (path === 'cadastro.html') {
+            ctaButton.classList.add('active');
+        } else {
+            ctaButton.classList.remove('active');
+        }
+    };
+
+    // 3. FUNÇÃO PARA BUSCAR E INJETAR O CONTEÚDO
+    // 'url' = o link que foi clicado
+    // 'updateHistory' = se devemos ou não salvar no histórico do navegador
+    const loadPage = async (url, updateHistory = true) => {
+        try {
+            // Mostra um "loading" simples
+            mainContent.style.opacity = '0.5';
+
+            // Busca o HTML da página de destino
+            const response = await fetch(url);
+            const htmlText = await response.text();
+
+            // Usa o DOMParser para "ler" o HTML buscado sem exibi-lo
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+
+            // Pega o <main> da página buscada
+            const newContent = doc.getElementById('main-content').innerHTML;
+            // Pega o <title> da página buscada
+            const newTitle = doc.querySelector('title').innerText;
+
+            // Injeta o novo conteúdo no "palco"
+            mainContent.innerHTML = newContent;
+            // Atualiza o título da aba do navegador
+            document.title = newTitle;
+
+            // Esconde o "loading"
+            mainContent.style.opacity = '1';
+
+            // Atualiza qual link está "ativo" no menu
+            updateActiveNav(url);
+
+            // Se for uma navegação normal (não um "voltar"),
+            // salva a nova URL no histórico do navegador.
+            if (updateHistory) {
+                // 'pushState' atualiza a URL na barra do navegador sem recarregar!
+                history.pushState({ path: url }, newTitle, url);
+            }
+
+        } catch (error) {
+            console.error('Erro ao carregar a página:', error);
+            // Se falhar, apenas redireciona da forma antiga
+            window.location.href = url;
+        }
+    };
+
+    // 4. INTERCEPTOR DE CLIQUES
+    document.body.addEventListener('click', (e) => {
+        
+        // Pega o link mais próximo que foi clicado
+        const link = e.target.closest('a');
+        
+        // Se não foi um link, ou se o link abre em nova aba, ignora.
+        if (!link || link.target === '_blank') {
+            return;
+        }
+        
+        // Se o link é para uma âncora (#) na MESMA página, ignora.
+        if (link.pathname === window.location.pathname && link.hash) {
+            return;
+        }
+
+        // Se o link é para um site externo, ignora.
+        if (link.hostname !== window.location.hostname) {
+            return;
+        }
+
+        // *** A EXCEÇÃO MAIS IMPORTANTE ***
+        // Se o link for para a página de cadastro, NÃO FAÇA NADA.
+        // O 'return' vai deixar o navegador fazer o recarregamento normal.
+        if (link.pathname.includes('cadastro.html')) {
+            console.log('Navegando para Cadastro, recarregamento completo.');
+            return;
+        }
+
+        // Se o link passou por todos os filtros:
+        e.preventDefault(); // 1. Impede o recarregamento da página
+        loadPage(link.pathname); // 2. Carrega o conteúdo via JavaScript
+    });
+
+    // 5. LIDANDO COM OS BOTÕES "VOLTAR" E "AVANÇAR"
+    window.addEventListener('popstate', (e) => {
+        // 'popstate' é disparado quando o usuário clica em voltar/avançar
+        // Carrega a página do histórico sem salvar um novo estado
+        loadPage(window.location.pathname, false);
+    });
+});

@@ -1,7 +1,8 @@
 # Entrega 3: Interatividade e Funcionalidades
 ## Especificações Técnicas Obrigatórias
 ### Manipulação do DOM
-* [ ] Implementar sistema de Single Page Application (SPA) básico;
+* [X] Implementar sistema de Single Page Application (SPA) básico;
+    * Local: js/router.js
 * [ ] Criar sistema de templates JavaScript.
 
 ## Funcionalidades Específicas Obrigatórias
