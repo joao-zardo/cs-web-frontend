@@ -7,21 +7,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. FUNÇÃO PARA ATUALIZAR O LINK ATIVO NO MENU
     const updateActiveNav = (path) => {
         const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            // Se o href do link corresponde ao path, torna-o ativo
-            if (link.getAttribute('href') === path) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-        
-        // Trata o botão "Cadastre-se" (que é um cta-button)
         const ctaButton = document.querySelector('.cta-button');
-        if (path === 'cadastro.html') {
-            ctaButton.classList.add('active');
-        } else {
+
+        // Primeiro, limpa o 'active' de todos os links e botões
+        navLinks.forEach(link => link.classList.remove('active'));
+        if (ctaButton) {
             ctaButton.classList.remove('active');
+        }
+
+        // 'path' é o que está na barra de URL (ex: "/membros.html" ou "/")
+        
+        if (path.includes('cadastro.html')) {
+            // Caso 1: A página de cadastro
+            if (ctaButton) ctaButton.classList.add('active');
+        
+        } else if (path === '/' || path.includes('index.html')) {
+            // Caso 2: A página inicial
+            const homeLink = document.querySelector('.nav-link[href="index.html"]');
+            if (homeLink) homeLink.classList.add('active');
+        
+        } else {
+            // Caso 3: Outras páginas (projetos, membros)
+            // Tenta encontrar um link cujo 'href' esteja contido no 'path'
+            // ex: href="membros.html" está contido em path="/membros.html"
+            const activeLink = Array.from(navLinks).find(link => {
+                const href = link.getAttribute('href');
+                return path.includes(href);
+            });
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
         }
     };
 
