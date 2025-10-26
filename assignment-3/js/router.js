@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. FUNÇÃO PARA BUSCAR E INJETAR O CONTEÚDO
     // 'url' = o link que foi clicado
     // 'updateHistory' = se devemos ou não salvar no histórico do navegador
-    const loadPage = async (url, updateHistory = true) => {
+    const loadPage = async (url, updateHistory = true, scrollToTop = true) => {
         try {
             // Mostra um "loading" simples
             mainContent.style.opacity = '0.5';
@@ -50,6 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
             mainContent.innerHTML = newContent;
             // Atualiza o título da aba do navegador
             document.title = newTitle;
+
+            // Força a rolagem para o topo, se for uma nova navegação
+            if (scrollToTop) {
+                window.scrollTo(0, 0);
+            }
 
             // Esconde o "loading"
             mainContent.style.opacity = '1';
@@ -102,13 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Se o link passou por todos os filtros:
         e.preventDefault(); // 1. Impede o recarregamento da página
-        loadPage(link.pathname); // 2. Carrega o conteúdo via JavaScript
+        loadPage(link.pathname, true, true); // 2. Carrega o conteúdo (true = scroll to top)
     });
 
     // 5. LIDANDO COM OS BOTÕES "VOLTAR" E "AVANÇAR"
     window.addEventListener('popstate', (e) => {
         // 'popstate' é disparado quando o usuário clica em voltar/avançar
         // Carrega a página do histórico sem salvar um novo estado
-        loadPage(window.location.pathname, false);
+        loadPage(window.location.pathname, false, false); // false = não scrollar (manter pos.)
     });
 });
