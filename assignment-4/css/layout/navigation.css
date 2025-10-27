@@ -49,6 +49,20 @@
   z-index: 1001; /* Acima do cabeçalho */
 }
 
+/* "X" para fechar o menu aberto */
+.hamburger-menu.is-active {
+  font-size: 0;
+} 
+
+.hamburger-menu.is-active::before {
+    content: '\00d7'; /* O caractere "X" */
+    font-size: var(--font-size-h3); /* Restaura o tamanho da fonte */
+    font-weight: bold; /* Deixa o X mais grosso */
+    display: block; /* Garante que ele ocupe espaço */
+    transform: rotate(90deg); 
+}
+
+
 /* --- CLASSE ATIVA (Quando o menu é aberto pelo JS) --- */
 .nav-links.is-active {
   display: flex; /* Mostra o menu */

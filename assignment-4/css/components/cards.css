@@ -49,3 +49,32 @@
 .contact-box a:hover { /*Centraliza o texto e adiciona um efeito de sublinhado (underline) quando o usuário passa o mouse sobre o link de contato*/
     text-decoration: underline;
 }
+
+/*------------------------------------------------------*/
+/* --- Ajustes Semânticos para o Contact Box (<dl>) --- */
+/*------------------------------------------------------*/
+
+/*
+ * Reseta os estilos padrão da Lista de Definição (<dl>)
+ * para que ela se comporte bem dentro do .contact-box
+*/
+.contact-box dl {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*
+ * Estiliza o Termo (<dt> - "Email:", "Telefone:")
+*/
+.contact-box dt {
+    font-weight: var(--font-weight-bold); /* Substitui o <strong> */
+    margin-top: var(--space-sm); /* Adiciona o espaço vertical que o <p> tinha */
+}
+
+/*
+ * Reseta a margem do <dd> (Descrição / o link)
+*/
+.contact-box dd {
+    margin-left: 0;
+    font-size: var(--font-size-p); /* Garante que o link tenha o tamanho de fonte correto */
+}

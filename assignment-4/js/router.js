@@ -139,4 +139,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Carrega a página do histórico sem salvar um novo estado
         loadPage(window.location.pathname, false, false); // false = não scrollar (manter pos.)
     });
+
+    // --- 6. INICIALIZAÇÃO DA PÁGINA ATUAL ---
+    // Este bloco roda UMA VEZ no carregamento da página (ex: F5).
+    // Ele verifica em qual página estamos e executa o renderizador
+    // correto ou o script de inicialização.
+    
+    const currentPath = window.location.pathname;
+
+    // 1. Renderiza o template, se estivermos na página de membros
+    if (currentPath.includes('membros.html')) {
+        renderizarPaginaMembros();
+    }
+    
+    // 2. Atualiza o link ativo no menu (corrige o bug do sublinhado no F5)
+    updateActiveNav(currentPath);
+
 });

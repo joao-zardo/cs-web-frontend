@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinksContainer.classList.add('is-active'); 
         hamburgerBtn.setAttribute('aria-expanded', 'true');
         hamburgerBtn.setAttribute('aria-label', 'Fechar menu');
+        hamburgerBtn.classList.add('is-active');
         // [A11Y] Foca no primeiro item
         navLinksContainer.querySelector('a[href]:not([disabled]), button:not([disabled])').focus();
     }
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinksContainer.classList.remove('is-active'); 
         hamburgerBtn.setAttribute('aria-expanded', 'false');
         hamburgerBtn.setAttribute('aria-label', 'Abrir menu');
+        hamburgerBtn.classList.remove('is-active');
         // [A11Y] Devolve o foco ao botão
         hamburgerBtn.focus();
     }
