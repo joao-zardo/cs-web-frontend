@@ -12,7 +12,6 @@
 
 /* 2. Base e Reset */
 @import url('base/reset.css');     /* Reseta os estilos do navegador */
-@import url('base/style.css');      /* Estilos para <html>, <body>, etc. */
 @import url('base/typography.css');/* Estilos para h1, h2, p, a, etc. */
 
 /* 3. Componentes (Os blocos de LEGO independentes) */
