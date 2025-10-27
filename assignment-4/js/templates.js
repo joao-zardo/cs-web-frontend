@@ -69,7 +69,7 @@ function renderizarPaginaMembros() {
     ];
 
     
-    /* --- 2. O TEMPLATE (O "MOLDE" HTML) --- */
+/* --- 2. O TEMPLATE (O "MOLDE" HTML) --- */
     // Esta função "desenha" um membro. Ela é inteligente e sabe quais classes CSS usar com base no 'tipo' do membro.
     function criarCardDeMembro(membro) {
         
@@ -97,19 +97,21 @@ function renderizarPaginaMembros() {
 
         // Retorna a string HTML final para este membro, usando as variáveis definidas.
         return `
-            <div class="${classeDivPrincipal}">
+            <article class="${classeDivPrincipal}">
+                
                 <img src="${membro.imagem}" alt="Foto de ${membro.nome}">
+                
                 <p class="${classeParagrafo}">${textoParagrafo}</p>
-            </div>
-        `;
+            
+            </article> 
+            `;
     }
 
 
 /* --- 3. A LÓGICA (O "RENDERIZADOR") --- */
+    // (Esta seção permanece 100% idêntica)
     const gridContainer = document.getElementById('membros-grid-container');
 
-    // IMPORTANTE: O gridContainer pode não existir se esta função for chamada
-    // na página errada, então o 'if' é crucial.
     if (gridContainer) {
         
         let htmlFinalDosCards = '';
