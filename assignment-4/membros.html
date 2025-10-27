@@ -1,0 +1,71 @@
+<!DOCTYPE html> <!--aqui é HTML-->
+<html lang="pt-BR"> <!--português-Brasil-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipe | Banda Marcial Alvorada</title> <!--título da página-->
+    <!-- Google Fonts - Inter para não deixar o site com aparência muito simples -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body> <!-- Corpo do site -->
+     <header class="main-header">
+  <nav class="main-nav">
+    
+    <a href="index.html" class="logo">
+      <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
+    </a>
+
+    <button class="hamburger-menu" 
+            aria-label="Abrir menu" 
+            aria-expanded="false" 
+            aria-controls="nav-links">
+      &#9776; </button>
+    
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link">Início</a></li>
+<li class="dropdown-item"> 
+      
+      <a href="projetos.html" class="nav-link">
+        Projetos Sociais
+        <span class="seta-desktop">&#9662;</span> 
+      </a>
+      
+      <ul class="submenu">
+        <li><a href="projetos.html#oficinas">Oficinas Musicais</a></li>
+        <li><a href="projetos.html#solidaria">Conforto Musical</a></li>
+        <li><a href="projetos.html#beneficente">Concerto Solidário</a></li>
+      </ul>
+      
+    </li>
+      <li><a href="membros.html" class="nav-link active">Equipe</a></li>
+      <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li>
+    </ul>
+
+  </nav>
+    </header>
+    <main class="container" id="main-content">
+        <section class="team-section">
+            <h1>Nossa Equipe</h1>
+            <p>Conheça os músicos e a equipe de apoio que dão vida à Banda Marcial Alvorada. Cada membro é uma peça fundamental da nossa família.</p>           
+            <div id="membros-grid-container" class="grid-equipe">
+            </div>
+        </section>
+
+
+
+    </main>
+        <footer class="main-footer"> <!-- Rodapé -->
+        <div class="container">
+            <p>&copy; 2025 Banda Marcial Alvorada. Todos os direitos reservados.</p>
+            <p>Erechim, RS - CNPJ: 00.123.456/0001-78</p>
+            <p class="credits">Desenvolvido por João Zardo.</p> <!--Créditos no rodapé estilizado-->
+        </div>
+    </footer>
+    <script src="js/menu.js"></script> 
+    <script src="js/templates.js"></script> <!-- Precisa ficar antes de router -->
+    <script src="js/router.js"></script>
+    </body>
+</html> 
