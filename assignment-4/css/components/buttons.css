@@ -27,13 +27,13 @@
 /* --- Adicionado para o botão de cadastro ativo --- */
 .nav-links .cta-button.active {
     background-color: var(--color-primary-base);
-    color: var(--color-neutral-300);
+    color: var(--color-neutral-0);
     cursor: default; /* Impede o efeito hover e indica que a página já está ativa */
 }
 }
 
 .project-button {
-  background-color: var(--color-secondary-base);
+  background-color: var(--color-primary-base);
   color: var( --color-neutral-0);
   padding: var(--space-xs);
   border-radius: 0.5rem;
@@ -58,7 +58,7 @@
 }
 
 #modal-botao-cancelar {
-    background-color: var(--color-secondary-base);
+    background-color: var(--color-neutral-700);
 }
 
 .submit-button:hover {

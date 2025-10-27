@@ -26,7 +26,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-neutral-100); /* Cor do ícone */
+  color: var(--color-neutral-0); /* Cor do ícone */
 }
 
 /* --- Lista de Links (Mobile - Escondido por padrão) --- */
@@ -81,7 +81,7 @@
   display: block;
   padding: var(--space-md) var(--space-sm);
   text-decoration: none;
-  color: var(--color-neutral-700);
+  color: var(--color-primary-dark);
   border-bottom: 1px var(--color-neutral-300) solid;
 }
 
@@ -173,7 +173,7 @@
   }
 
    .nav-links .nav-link {
-    color: var(--color-neutral-300);
+    color: var(--color-neutral-0);
    } 
 
    .nav-link.active { /* Estilo para o link ativo (página atual) */

@@ -13,7 +13,7 @@
   /* Cores Primárias (Azul) */
   --color-primary-dark: #1E3A8A;   /* Azul Escuro */
   --color-primary-base: #152cb3;   /* Azul Principal */
-  --color-primary-light: #2563eb;  /* Azul Claro */
+  --color-primary-light: #1D50BF;  /* Azul pouco mais claro */
 
   /* Cores Secundárias (Amarelo) */
   --color-secondary-dark: #d9a106; /* Amarelo Escuro */
@@ -22,8 +22,8 @@
   
   /* Cores Neutras */
   --color-neutral-900: #111827; /* Quase Preto (Títulos) */
-  --color-neutral-700: #374151; /* Cinza Escuro (Texto) */
-  --color-neutral-500: #6B7280; /* Cinza Médio (Texto Secundário) */
+  --color-neutral-700: #374150; /* Cinza Escuro (Texto) */
+  --color-neutral-500: #53585F; /* Cinza Médio (Texto Secundário) alterado por causa da acessibilidade*/
   --color-neutral-300: #D1D5DB; /* Cinza Médio (Bordas) */
   --color-neutral-200: #e2e8f0; /* Cinza Suave/Ardósia (Form) */
   --color-neutral-100: #F3F4F6; /* Cinza Claro (Fundos) */
