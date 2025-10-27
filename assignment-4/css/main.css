@@ -14,6 +14,7 @@
 @import url('base/reset.css');     /* Reseta os estilos do navegador */
 @import url('base/style.css');      /* Estilos para <html>, <body>, etc. */
 @import url('base/typography.css');/* Estilos para h1, h2, p, a, etc. */
+@import url('base/accessibility.css');
 
 /* 3. Componentes (Os blocos de LEGO independentes) */
 @import url('components/buttons.css'); /* Define .btn, .btn-primary, .btn:hover */

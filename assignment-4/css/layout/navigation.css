@@ -212,12 +212,14 @@
   }
 
    /* Quando o mouse passar sobre o <li> pai (.dropdown-item), mostra o .submenu que está dentro dele. */
-  .nav-links .dropdown-item:hover .submenu {
+  .nav-links .dropdown-item:hover .submenu,
+  .nav-links .dropdown-item.is-open .submenu {
     display: block; /* Mostra o submenu */
   }
 
   /* Gira a seta quando o menu está aberto */
-  .nav-links .dropdown-item:hover .seta-desktop {
+  .nav-links .dropdown-item:hover .seta-desktop,
+ .nav-links .dropdown-item.is-open .seta-desktop {
     transform: rotate(180deg); /* Vira a seta para cima */
   }
 }

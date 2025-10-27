@@ -1,50 +1,129 @@
-// Aguarda o documento carregar completamente
+/* Espera o DOM (a página) carregar completamente */
 document.addEventListener('DOMContentLoaded', () => {
-  
-  // Seleciona o botão e a lista de links
-  const hamburgerBtn = document.querySelector('.hamburger-menu');
-  const navLinks = document.querySelector('#nav-links');
 
-  // Verifica se os dois elementos existem antes de adicionar o evento
-  if (hamburgerBtn && navLinks) {
+    // --- 1. SELEÇÃO DOS ELEMENTOS ---
+    const hamburgerBtn = document.querySelector('.hamburger-menu');
+    const navLinksContainer = document.querySelector('#nav-links');
+
+    // Se não houver menu, não faz nada.
+    if (!hamburgerBtn || !navLinksContainer) {
+        return;
+    }
+
+    // --- 2. LÓGICA DO MENU HAMBURGER (MOBILE) ---
     
-    // --- Código Hamburguer ---
-    hamburgerBtn.addEventListener('click', () => {
-      
-      // Alterna (adiciona/remove) a classe 'is-active' na lista de links
-      navLinks.classList.toggle('is-active');
-
-      // Verifica se o menu está ativo (aberto)
-      const isActive = navLinks.classList.contains('is-active');
-
-      // Atualiza os atributos de acessibilidade
-      hamburgerBtn.setAttribute('aria-expanded', isActive);
-
-      //Muda o ícone e o rótulo do botão
-      if (isActive) {
-        hamburgerBtn.innerHTML = '&times;'; // Ícone 'X' (fechar)
+    function openMenu() {
+        navLinksContainer.classList.add('is-active'); 
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
         hamburgerBtn.setAttribute('aria-label', 'Fechar menu');
-      } else {
-        hamburgerBtn.innerHTML = '&#9776;'; // Ícone Hamburguer
+        // [A11Y] Foca no primeiro item
+        navLinksContainer.querySelector('a[href]:not([disabled]), button:not([disabled])').focus();
+    }
+
+    function closeMenu() {
+        navLinksContainer.classList.remove('is-active'); 
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
         hamburgerBtn.setAttribute('aria-label', 'Abrir menu');
-      }
+        // [A11Y] Devolve o foco ao botão
+        hamburgerBtn.focus();
+    }
+
+    // Clique no botão hamburger
+    hamburgerBtn.addEventListener('click', () => {
+        const isMenuOpen = navLinksContainer.classList.contains('is-active');
+        isMenuOpen ? closeMenu() : openMenu();
     });
 
-    // Lógica para fechar o menu ao clicar em um link.
-    // Seleciona TODOS os links (<a>) que estão dentro do menu (#nav-links)
-    const allLinks = navLinks.querySelectorAll('a');
-    // Cria um loop e adiciona um "escutador de clique" em CADA link
-    allLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        // FORÇA o fechamento do menu
-        //    (Não usamos 'toggle', e sim 'remove' para garantir que feche)
-        navLinks.classList.remove('is-active');
-        // Reseta o botão do hamburger para o estado "fechado"
-        //    (Isso garante que o botão volte ao normal)
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-        hamburgerBtn.innerHTML = '&#9776;'; // Ícone Hamburguer
-        hamburgerBtn.setAttribute('aria-label', 'Abrir menu');
-      });
+    // (REQUISITO DO USUÁRIO) Fechar o menu mobile ao clicar em um link
+    navLinksContainer.addEventListener('click', (e) => {
+        // Verifica se o hamburger está visível (estamos no mobile)
+        const isMobile = hamburgerBtn.offsetParent !== null;
+
+        // Se estamos no mobile E o item clicado foi um link (<a>)
+        if (isMobile && e.target.tagName === 'A') {
+            closeMenu();
+        }
     });
-  }
+
+    
+    // --- 3. LÓGICA DO DROPDOWN (DESKTOP) ---
+    
+    const dropdownItems = document.querySelectorAll('.nav-links .dropdown-item');
+
+    function closeAllDropdowns() {
+        dropdownItems.forEach(item => item.classList.remove('is-open'));
+    }
+
+    dropdownItems.forEach(item => {
+        const mainLink = item.querySelector('.nav-link'); // O link "Projetos Sociais"
+        
+        mainLink.addEventListener('click', (e) => {
+            // Verifica se o hamburger está escondido (estamos no desktop)
+            const isDesktop = hamburgerBtn.offsetParent === null;
+
+            if (isDesktop) {
+                // [A11Y] No desktop, impede o link de navegar
+                // e o transforma em um "botão" de menu
+                e.preventDefault(); 
+                
+                const isOpen = item.classList.contains('is-open');
+                closeAllDropdowns(); // Fecha os outros
+                
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    // [A11Y] Foca no primeiro item do submenu
+                    item.querySelector('.submenu a').focus();
+                }
+            }
+            // Se for mobile, não faz nada (deixa o clique fechar o menu, como acima)
+        });
+    });
+
+
+    // --- 4. LISTENERS GLOBAIS (ESC, Click-Out, Tab Trap) ---
+
+    // [A11Y] Fecha menus com a tecla ESCAPE
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            // Fecha o menu mobile (se estiver aberto)
+            if (navLinksContainer.classList.contains('is-active')) {
+                e.preventDefault();
+                closeMenu();
+            }
+            // Fecha o dropdown de desktop (se estiver aberto)
+            closeAllDropdowns();
+        }
+        
+        // [A11Y] "Focus Trap" do HAMBURGER
+        // Só executa se o menu hamburger estiver ativo
+        if (navLinksContainer.classList.contains('is-active')) {
+            if (e.key === 'Tab') {
+                const focusableItems = navLinksContainer.querySelectorAll('a[href]:not([disabled]), button:not([disabled])');
+                const firstFocusableItem = focusableItems[0];
+                const lastFocusableItem = focusableItems[focusableItems.length - 1];
+
+                if (e.shiftKey) { 
+                    if (document.activeElement === firstFocusableItem) {
+                        e.preventDefault();
+                        lastFocusableItem.focus();
+                    }
+                } else { 
+                    if (document.activeElement === lastFocusableItem) {
+                        e.preventDefault();
+                        firstFocusableItem.focus();
+                    }
+                }
+            }
+        }
+    });
+    
+    // [A11Y] Fecha o dropdown de desktop se clicar fora dele
+    document.addEventListener('click', (e) => {
+        // Se o clique NÃO foi dentro de um .dropdown-item
+        // E NÃO foi o botão hamburger (para evitar fechar o menu que acabou de abrir)
+        if (!e.target.closest('.dropdown-item') && !e.target.closest('.hamburger-menu')) {
+            closeAllDropdowns();
+        }
+    });
+
 });

@@ -7,6 +7,7 @@
 
 ### Acessibilidade (WCAG 2.1 Nível AA)
 * [ ] Implementar navegação por teclado em todos os componentes;
+    * Local: accessibility.css (anel de foco global), cadastro.js e menu.js ("focus trap")
 * [ ] Criar estrutura semântica adequada;
 * [ ] Garantir contraste mínimo de 4.5:1 para texto normal;
 * [ ] Implementar suporte completo para leitores de tela;
