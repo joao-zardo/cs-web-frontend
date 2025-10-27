@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formGroup.classList.add('error');
         const errorMessage = formGroup.querySelector('.validation-message');
         errorMessage.textContent = message;
+        input.setAttribute('aria-invalid', 'true');
     }
 
     function showSuccess(input) {
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formGroup.classList.add('success');
         const errorMessage = formGroup.querySelector('.validation-message');
         errorMessage.textContent = '';
+        input.setAttribute('aria-invalid', 'false');
     }
     
     // Limpa a validação (para quando o usuário está digitando)
@@ -52,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formGroup.classList.remove('success');
         const errorMessage = formGroup.querySelector('.validation-message');
         errorMessage.textContent = '';
+        input.removeAttribute('aria-invalid');
     }
 
     // Feedback (Modal/Toast)
@@ -230,18 +233,26 @@ document.addEventListener('DOMContentLoaded', () => {
     cidadeInput.addEventListener('blur', () => validateRequiredText(cidadeInput));
     estadoInput.addEventListener('blur', () => validateRequiredText(estadoInput));
 
-    // Tags (clique)
+// Tags (clique)
     allTags.forEach(tag => {
+        // Listener de CLIQUE
         tag.addEventListener('click', () => {
             tag.classList.toggle('selected');
-            checkButtonState(); // Checa o botão
-            validateTags();     // Mostra erro/sucesso nas tags
-            updateBadgeStatus();
+
+            // [A11Y] Atualiza ARIA
+            const isSelected = tag.classList.contains('selected');
+            tag.setAttribute('aria-checked', isSelected ? 'true' : 'false'); 
+
+            // Chama as funções DEPOIS que o estado mudou
+            checkButtonState(); 
+            validateTags();     
+            updateBadgeStatus(); 
         });
+
         tag.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tag.click(); }
         });
-    });
+     });
 
     // Envio do Formulário (Submit)
     form.addEventListener('submit', (e) => {

@@ -10,7 +10,8 @@
     * Local: accessibility.css (anel de foco global), cadastro.js e menu.js ("focus trap")
 * [X] Criar estrutura semântica adequada;
     * Páginas revisadas
-* [ ] Garantir contraste mínimo de 4.5:1 para texto normal;
+* [X] Garantir contraste mínimo de 4.5:1 para texto normal;
+    * Cores ajustadas para garantir contraste WCAG AA. Avaliado em: https://webaim.org/resources/contrastchecker/
 * [ ] Implementar suporte completo para leitores de tela;
 * [ ] Criar versão de alto contraste e modo escuro acessível.
 

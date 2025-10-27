@@ -66,6 +66,6 @@
 }
 
 .submit-button:disabled {
-    background-color: var(--color-neutral-300); /* Cinza claro para indicar que está desativado */
+    background-color: var(--color-neutral-700); /* Cinza claro para indicar que está desativado */
     cursor: not-allowed; /* Muda o cursor para indicar que o botão não pode ser clicado */
 }

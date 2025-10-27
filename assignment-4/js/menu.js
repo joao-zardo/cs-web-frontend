@@ -53,7 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownItems = document.querySelectorAll('.nav-links .dropdown-item');
 
     function closeAllDropdowns() {
-        dropdownItems.forEach(item => item.classList.remove('is-open'));
+        dropdownItems.forEach(item => {
+            item.classList.remove('is-open');
+            const link = item.querySelector('.nav-link');
+            if (link) link.setAttribute('aria-expanded', 'false');
+    });
     }
 
     dropdownItems.forEach(item => {
@@ -73,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (!isOpen) {
                     item.classList.add('is-open');
+                    mainLink.setAttribute('aria-expanded', 'true');
                     // [A11Y] Foca no primeiro item do submenu
                     item.querySelector('.submenu a').focus();
                 }
