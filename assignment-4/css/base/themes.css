@@ -6,6 +6,7 @@ body.dark-mode {
   --color-neutral-200: #ffffff; /* bordas do formulário */
   --color-neutral-300: #d8d8d8; /* bordas internas do formulário e créditos */
   --color-neutraltxt-200: #363636; /* hover do check */
+  --color-neutralacc-100: #F3F4F6; /* botões temas não selecionados*/
 
   /* --- TEXTOS --- */
   /* Invertemos os neutros escuros e claros */
@@ -25,6 +26,7 @@ body.dark-mode {
   --color-primarylg-dark: #ffffff; /* legend */
   --color-primaryck-dark: #041953; /* check do cadastro */
   --color-primarybd-dark: #93affa; /* badge do cadastro */
+ --color-primaryacc-base: #002791;   /* Cor botão temas selecionado*/
 
   /* --- CORES SECUNDÁRIAS (Amarelo) --- */
   --color-secondary-dark: #ffbb1c; /* Amarelo Principal (para destaque) */
@@ -51,12 +53,10 @@ body.dark-mode {
   /* Info */
   --color-info: #67e8f9;            /* Ciano mais claro */
 
-  /* --- SOMBRAS (Opcional) --- */
+  /* --- SOMBRAS --- */
   /* Substituir por bordas claras ou sombras muito sutis */
    --box-shadow-md: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
    --box-shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.03), 0 4px 6px -2px rgba(255, 255, 255, 0.03);
-   /* Ou usar bordas: */
-   /* Ex: .card { border: 1px solid var(--color-neutral-300); box-shadow: none; } */
 }
 
 
@@ -70,6 +70,7 @@ body.high-contrast-mode {
   --color-neutral-300: #ffffff;
   --color-neutraltxt-200: #000000; /* hover do check */
   --color-neutraltxt-900: #000000;
+   --color-neutralacc-100: #F3F4F6; /* botões temas não selecionados*/
 
   /* --- TEXTOS --- */
   --color-neutral-900: #ffffff;
@@ -79,6 +80,7 @@ body.high-contrast-mode {
   --color-footer:  #000000;
   --color-neutrald-700: #202020; /* Botão cadastro desativado */
 
+
   /* --- CORES PRIMÁRIAS --- */
   /* Cores vibrantes para links e foco */
   --color-primary-dark: #001A1A;  /* Ciano Brilhante */
@@ -87,6 +89,7 @@ body.high-contrast-mode {
   --color-primarylg-dark: #ffffff; /* legend */
   --color-primaryck-dark: #46000f; /* check do cadastro */
   --color-primarybd-dark: #00ffff; /* badge do cadastro */
+  --color-primaryacc-base: #00ffff;   /* Cor botão temas selecionado*/
 
   /* --- CORES SECUNDÁRIAS (Amarelo) --- */
   --color-secondary-dark: #ffff00; /* Amarelo Brilhante */

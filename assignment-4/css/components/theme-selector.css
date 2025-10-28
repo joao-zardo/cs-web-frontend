@@ -32,7 +32,7 @@
   width: 40px;      /* Tamanho fixo */
   height: 40px;
   transition: background-color 0.2s ease, border-color 0.2s ease;
- background-color: var(--color-neutral-100); /* Já estava aqui, ótimo */
+ background-color: var(--color-neutralacc-100);
 }
 
 
@@ -42,7 +42,7 @@
 
 /* Estilo do botão SELECIONADO */
 .theme-button[aria-checked="true"] {
-  background-color: var(--color-primary-base); /* Usa a cor primária */
+  background-color: var(--color-primaryacc-base); /* Usa a cor primária */
   border-color: var(--color-primary-dark);
   color: var(--color-neutral-0); /* Ícone branco */
 }

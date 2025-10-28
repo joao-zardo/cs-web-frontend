@@ -65,26 +65,30 @@
             <div class="theme-selector" role="radiogroup" aria-labelledby="theme-label">
                 <span id="theme-label" class="sr-only">Escolha um tema de cores</span> <!-- sr-only esconde visualmente, mas é lido */} -->
                 
-                <!-- Botão para Tema Claro (Padrão) -->
-                <button type="button" class="theme-button theme-button-light" data-theme="light" aria-checked="true" role="radio">
-                    <span class="sr-only">Tema Claro</span> <!-- Descrição para leitor de tela -->
-                    ☀️ <!-- Ícone visual -->
+                <button type="button" class="theme-button theme-button-light" data-theme="light" aria-checked="true" role="radio"
+                        aria-labelledby="theme-icon-light theme-text-light">
+                    <span id="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span id="theme-text-light" class="sr-only">Tema Claro</span>
                 </button>
-                
+        
                 <!-- Botão para Tema Escuro -->
-                <button type="button" class="theme-button theme-button-dark" data-theme="dark" aria-checked="false" role="radio">
-                    <span class="sr-only">Tema Escuro</span>
-                    🌙
+                <button type="button" class="theme-button theme-button-dark" data-theme="dark" aria-checked="false" role="radio"
+                        aria-labelledby="theme-icon-dark theme-text-dark"> <!-- APONTA PARA OS IDs INTERNOS -->
+                    <span id="theme-icon-dark" aria-hidden="true">🌙</span> <!-- ID e aria-hidden -->
+                    <span id="theme-text-dark" class="sr-only">Tema Escuro</span> <!-- ID *-->
                 </button>
-                
-                <!-- Botão para Tema Alto Contraste -->
-                <button type="button" class="theme-button theme-button-contrast" data-theme="contrast" aria-checked="false" role="radio">
-                    <span class="sr-only">Tema Alto Contraste</span>
-                    ⚫️ <!-- Ícone visual simples -->
+
+               <!-- Botão para Tema Alto Contraste -->
+                <button type="button" class="theme-button theme-button-contrast" data-theme="contrast" aria-checked="false" role="radio"
+                        aria-labelledby="theme-icon-contrast theme-text-contrast"> 
+                    <span id="theme-icon-contrast" aria-hidden="true">◑</span> 
+                    <span id="theme-text-contrast" class="sr-only">Tema Alto Contraste</span>
                 </button>
+
             </div>
             </div>
     </footer>
+
 
     <script src="js/menu.js"></script> 
     <script src="js/templates.js"></script> <!-- Precisa ficar antes de router -->
