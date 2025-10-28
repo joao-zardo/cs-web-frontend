@@ -19,7 +19,7 @@
 
 ### Otimização para Produção
 * [ ] Implementar minificação de CSS, JavaScript e HTML;
-* [ ] Configurar compressão de imagens.
+* [X] Configurar compressão de imagens.
 
 ## O que deverá ser entregue:
 ### Repositório GitHub Completo
