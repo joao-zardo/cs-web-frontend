@@ -88,7 +88,8 @@
     <div class="form-group">
         <label for="nascimento">Data de Nascimento (opcional)</label>
         <input type="date" id="nascimento" name="nascimento" 
-               aria-describedby="nascimento-error">
+               aria-describedby="nascimento-error"
+               aria-label="Data de Nascimento">
         <small class="validation-message" id="nascimento-error"></small>
     </div>
 </fieldset>
@@ -127,12 +128,13 @@
                     <div class="form-group">
                         <label>Quais áreas te interessam? (Clique para selecionar)</label>
                         <div class="tags-container" id="tags-interesses">
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="percussao" aria-checked="false">Percussão</span>
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="sopros" aria-checked="false">Sopros (Metais)</span>
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="corpo-coreografico" aria-checked="false">Corpo Coreográfico</span>
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="bandeiras" aria-checked="false">Bandeiras</span>
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="logistica" aria-checked="false">Logística/Apoio</span>
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="percussao" aria-checked="false" id="tag-label-percussao" aria-labelledby="tag-label-percussao">Percussão</span> <!-- aria-labelledby e id para remover erro de acessibilidade-->
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="sopros" aria-checked="false" id="tag-label-sopros" aria-labelledby="tag-label-sopros">Sopros (Metais)</span> 
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="corpo-coreografico" aria-checked="false" id="tag-label-corpo" aria-labelledby="tag-label-corpo">Corpo Coreográfico</span> 
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="bandeiras" aria-checked="false" id="tag-label-bandeiras" aria-labelledby="tag-label-bandeiras">Bandeiras</span> 
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="logistica" aria-checked="false" id="tag-label-logistica" aria-labelledby="tag-label-logistica">Logística/Apoio</span> 
                         </div>
+
                         <small class="validation-message"></small>
                     </div>
                 </fieldset>
