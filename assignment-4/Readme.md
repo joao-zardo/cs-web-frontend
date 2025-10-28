@@ -20,16 +20,19 @@
 ### Otimização para Produção
 * [ ] Implementar minificação de CSS, JavaScript e HTML;
 * [X] Configurar compressão de imagens.
+    * Imagens otimizadas com extensão .webp
 
 ## O que deverá ser entregue:
 ### Repositório GitHub Completo
-* [ ] Código fonte versionado;
-* [ ] Histórico de commits organizado;
+* [X] Código fonte versionado;
+* [X] Histórico de commits organizado;
 * [ ] Pull Requests documentados;
 * [ ] Issues e milestones utilizados.
 
 ### Documentação Técnica
-* [ ] README profissional completo.
+* [X] README profissional completo.
+    * Readme detalhado de cada atividade e geral.
 
 ### Forma de Entrega
-* [ ] Link PÚBLICO do repositório do GitHub com os arquivos do projeto e arquivo Read na raiz do repositório com conteúdo completo do projeto desenvolvido até aqui, equivalente ao da entrega anterior, acrescentando os entregáveis desta fase.
+* [X] Link PÚBLICO do repositório do GitHub com os arquivos do projeto e arquivo Read na raiz do repositório com conteúdo completo do projeto desenvolvido até aqui, equivalente ao da entrega anterior, acrescentando os entregáveis desta fase.
+    * https://github.com/joao-zardo/cs-web-frontend/tree/main/assignment-4
