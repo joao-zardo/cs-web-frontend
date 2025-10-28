@@ -151,15 +151,44 @@
 
     </main>
 
+
+
     <footer class="main-footer">
         <div class="container">
             <p>&copy; 2025 Banda Marcial Alvorada. Todos os direitos reservados.</p>
             <p>Erechim, RS - CNPJ: 00.123.456/0001-78</p>
             <p class="credits">Desenvolvido por João Zardo.</p>
-        </div>
+
+            <div class="theme-selector" role="radiogroup" aria-labelledby="theme-label">
+                <span id="theme-label" class="sr-only">Escolha um tema de cores</span> <!-- sr-only esconde visualmente, mas é lido */} -->
+                
+                <!-- Botão para Tema Claro (Padrão) -->
+                <button type="button" class="theme-button theme-button-light" data-theme="light" aria-checked="true" role="radio">
+                    <span class="sr-only">Tema Claro</span> <!-- Descrição para leitor de tela -->
+                    ☀️ <!-- Ícone visual -->
+                </button>
+                
+                <!-- Botão para Tema Escuro -->
+                <button type="button" class="theme-button theme-button-dark" data-theme="dark" aria-checked="false" role="radio">
+                    <span class="sr-only">Tema Escuro</span>
+                    🌙
+                </button>
+                
+                <!-- Botão para Tema Alto Contraste -->
+                <button type="button" class="theme-button theme-button-contrast" data-theme="contrast" aria-checked="false" role="radio">
+                    <span class="sr-only">Tema Alto Contraste</span>
+                    ⚫️ <!-- Ícone visual simples -->
+                </button>
+            </div>
+            </div>
     </footer>
+
+
+
+
     <script src="js/menu.js"></script> 
     <script src="js/templates.js"></script> <!-- Precisa ficar antes de router -->
+    <script src="js/theme-switcher.js"></script>
     <script src="js/router.js"></script>
 </body>
 </html>

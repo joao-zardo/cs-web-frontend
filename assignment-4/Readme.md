@@ -12,8 +12,10 @@
     * Páginas revisadas
 * [X] Garantir contraste mínimo de 4.5:1 para texto normal;
     * Cores ajustadas para garantir contraste WCAG AA. Avaliado em: https://webaim.org/resources/contrastchecker/
-* [ ] Implementar suporte completo para leitores de tela;
-* [ ] Criar versão de alto contraste e modo escuro acessível.
+* [X] Implementar suporte completo para leitores de tela;
+    * Diversos ajustes utilizando as ferramentas de acessibilidade de verificação de erros do Firefox
+* [X] Criar versão de alto contraste e modo escuro acessível.
+    * Funcionalidades adicionadas para seleção no rodapé.
 
 ### Otimização para Produção
 * [ ] Implementar minificação de CSS, JavaScript e HTML;
