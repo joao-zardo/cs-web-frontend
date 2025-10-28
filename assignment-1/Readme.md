@@ -1,3 +1,8 @@
+Professores: Local correto do projeto: https://github.com/joao-zardo/cs-web-frotend-banda-alvorada
+ Após conversar com a tutora pela plataforma percebi que havia entregue a primeira tarefa errada, pois estava separando cada entrega em pastas.
+ Para corrigir isso criei um novo repositório, aquele do link acima. 
+ Nas pastas que vocês encontraram do presente repositório poderão acompanhar a trajetória do desenvolvimento, mas as entregas da maneira correta estão naquele link.
+
 # Entrega 1: Fundamentos e Estruturação
 ## Especificações Técnicas Obrigatórias
 ### Estrutura HTML5 Semântica
