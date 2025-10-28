@@ -32,5 +32,4 @@
 * [ ] README profissional completo.
 
 ### Forma de Entrega
-Link PÚBLICO do repositório do GitHub com os arquivos do projeto e arquivo Read na raiz do repositório com conteúdo completo do projeto desenvolvido até aqui, equivalente ao da entrega anterior, acrescentando os entregáveis desta fase.
-
+* [ ] Link PÚBLICO do repositório do GitHub com os arquivos do projeto e arquivo Read na raiz do repositório com conteúdo completo do projeto desenvolvido até aqui, equivalente ao da entrega anterior, acrescentando os entregáveis desta fase.

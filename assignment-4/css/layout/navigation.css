@@ -44,7 +44,7 @@
   top: 100%; /* Começa logo abaixo do header */
   left: 0;
   width: 100%;
-  background-color: var(--color-neutral-0); /* Fundo branco para o menu */
+  background-color: var(--color-neutralmn-0); /* Fundo branco para o menu */
   box-shadow: var(--box-shadow-md);
   z-index: 1001; /* Acima do cabeçalho */
 }
@@ -81,7 +81,7 @@
   display: block;
   padding: var(--space-md) var(--space-sm);
   text-decoration: none;
-  color: var(--color-primary-dark);
+  color: var(--color-primarymn-dark);
   border-bottom: 1px var(--color-neutral-300) solid;
 }
 
@@ -114,7 +114,7 @@
 
 .submenu li {
 
-  color: var( --color-neutral-700); /* Exemplo: um cinza mais claro */
+  color: var( --color-neutral-700); /* cinza mais claro */
   padding-top: var(--space-xs);
   padding-bottom: var(--space-xs);
   font-size: var(--font-size-p);
@@ -215,7 +215,7 @@
   .submenu li a {
     display: block; /* Faz o link ocupar todo o espaço do <li> */
     padding: var(--space-xs) var(--space-sm);
-    color: var(--color-neutral-700); /* Cor do texto (ajuste) */
+    color: var(--color-neutral-700); /* Cor do texto */
     text-decoration: none;
     white-space: nowrap; /* Impede que o texto quebre em duas linhas */
   }

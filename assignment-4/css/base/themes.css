@@ -7,6 +7,7 @@ body.dark-mode {
   --color-neutral-300: #d8d8d8; /* bordas internas do formulário e créditos */
   --color-neutraltxt-200: #363636; /* hover do check */
   --color-neutralacc-100: #F3F4F6; /* botões temas não selecionados*/
+  --color-neutralmn-0: #000000; /* fundo do menu mobile */
 
   /* --- TEXTOS --- */
   /* Invertemos os neutros escuros e claros */
@@ -27,12 +28,14 @@ body.dark-mode {
   --color-primaryck-dark: #041953; /* check do cadastro */
   --color-primarybd-dark: #93affa; /* badge do cadastro */
  --color-primaryacc-base: #002791;   /* Cor botão temas selecionado*/
+ --color-primarymn-dark: #ffffff; /* Itens do menu mobile*/
 
   /* --- CORES SECUNDÁRIAS (Amarelo) --- */
   --color-secondary-dark: #ffbb1c; /* Amarelo Principal (para destaque) */
   --color-secondary-base: #805c03; /* Amarelo Principal */
   --color-secondarybt-base: #FBBF24; /* Botão Principal */
   --color-secondary-light: #836f00;
+  --color-secondarybtm-base: #836f00;  /* botão do menu mobile */
                                   
 
   /* --- CORES DE FEEDBACK --- */
@@ -70,7 +73,8 @@ body.high-contrast-mode {
   --color-neutral-300: #ffffff;
   --color-neutraltxt-200: #000000; /* hover do check */
   --color-neutraltxt-900: #000000;
-   --color-neutralacc-100: #F3F4F6; /* botões temas não selecionados*/
+  --color-neutralacc-100: #F3F4F6; /* botões temas não selecionados*/
+   --color-neutralmn-0: #000000;/* fundo do menu mobile */
 
   /* --- TEXTOS --- */
   --color-neutral-900: #ffffff;
@@ -90,12 +94,14 @@ body.high-contrast-mode {
   --color-primaryck-dark: #46000f; /* check do cadastro */
   --color-primarybd-dark: #00ffff; /* badge do cadastro */
   --color-primaryacc-base: #00ffff;   /* Cor botão temas selecionado*/
+   --color-primarymn-dark: #ffffff; /* Itens do menu mobile*/
 
   /* --- CORES SECUNDÁRIAS (Amarelo) --- */
   --color-secondary-dark: #ffff00; /* Amarelo Brilhante */
   --color-secondary-base: #ffff00;
   --color-secondarybt-base: #ffff00; /* Botão Principal */
   --color-secondary-light: #000000;/* Fundo preto */
+    --color-secondarybtm-base: #836f00;  /* botão do menu mobile */
 
   /* --- CORES DE FEEDBACK --- */
   /* Usar cores puras e distintas */

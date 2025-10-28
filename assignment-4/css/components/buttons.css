@@ -4,7 +4,7 @@
 
 /* Estilo do botão CTA no menu mobile */
 .cta-button {
-  background-color: var(--color-secondarybt-base); /* Cor do botão CTA */
+  background-color: var(--color-secondarybtm-base); /* Cor do botão CTA */
   margin: 0;
   border-radius: 0;
 }

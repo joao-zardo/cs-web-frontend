@@ -18,6 +18,7 @@
   --color-primaryck-dark: #1E3A8A;     /* check do cadastro */
   --color-primarybd-dark: #1E3A8A;     /* badge do cadastro */
   --color-primaryacc-base: #152cb3;   /* Cor botão temas selecionado*/
+  --color-primarymn-dark:  #1E3A8A; /* escrita dos títulos do menu*/
 
 
   /* Cores Secundárias (Amarelo) */
@@ -25,6 +26,7 @@
   --color-secondary-base: #FBBF24; /* Amarelo Principal */
   --color-secondary-light: #FEF3C7;/* Amarelo Claro */
   --color-secondarybt-base: #FBBF24; /* Botão Principal */
+  --color-secondarybtm-base: #FBBF24; /* botão do menu mobile */
 
   /* Cores Neutras */
   --color-neutral-900: #111827; /* Quase Preto (Títulos) */
@@ -40,6 +42,7 @@
   --color-neutraltxt-200: #e2e8f0; /* hover do check */
   --color-neutrald-700: #374150; /* Botão cadastro desativado e cancelar */
   --color-neutralacc-100: #F3F4F6; /* botões temas não selecionados*/
+  --color-neutralmn-0: #FFFFFF;
 
   /* Cores de Feedback (para alertas, etc.) */
   --color-danger: #dc3545;
